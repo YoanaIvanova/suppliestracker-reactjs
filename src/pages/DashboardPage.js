@@ -4,7 +4,7 @@ const DashboardPage = () => {
   return (
     <Container fluid className="bg-secondary h-100">
       <Row>
-        <Col>Dasboard Page</Col>
+        <Col>Dashboard Page</Col>
       </Row>
     </Container>
   );

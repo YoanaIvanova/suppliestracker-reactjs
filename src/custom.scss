@@ -1,9 +1,6 @@
-$theme-colors: (
-  primary: #ffe4c0,
-  secondary: #ffbbbb
+@use "~bootstrap/scss/bootstrap" with (
+  $theme-colors: (
+    primary: #ffe4c0,
+    secondary: #ffbbbb
+  )
 );
-
-@import "~bootstrap/scss/bootstrap";
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
