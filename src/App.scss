@@ -77,3 +77,14 @@ body {
   background: red;
   border-radius: 100%;
 }
+
+.items-pane {
+  .item {
+    border-radius: 1rem;
+    
+    &:hover {
+      background-color: #bdebd9;
+      cursor: pointer;
+    }
+  }
+}

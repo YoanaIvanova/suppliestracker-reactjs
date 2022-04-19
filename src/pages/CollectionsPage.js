@@ -11,67 +11,67 @@ const CollectionsPage = () => {
         </Col>
       </Row>
       <Row className="items-pane px-4">
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
-        <Col xs={3} sm={2} xl={1} className="mt-3">
+        <Col xs={3} sm={2} xl={1} className="item px-2 py-3 d-flex justify-content-center">
           <div className="circle-dot"></div>
         </Col>
       </Row>
