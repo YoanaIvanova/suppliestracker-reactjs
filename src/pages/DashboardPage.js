@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const DashboardPage = () => {
   return (
-    <Container fluid className="bg-secondary h-100">
+    <Container fluid>
       <Row>
         <Col>Dashboard Page</Col>
       </Row>

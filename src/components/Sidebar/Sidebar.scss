@@ -9,12 +9,51 @@
   bottom: 0;
   left: 0;
   z-index: 100;
-  padding: 48px 0 0;
   overflow-y: auto;
   width: 100%;
 
   @include media-breakpoint-up(md) {
-    max-width: 260px;
+    max-width: 300px;
+  }
+
+  .sidebar-menu {
+    .navbar-brand {
+      width: fit-content;
+    }
+
+    .nav-link {
+      &:not(.collapse-close) {
+        color: $primary;
+        border-radius: 0.5rem;
+        border: 1px solid #4b3c8a;
+        padding: 0.6rem 1rem;
+        margin-bottom: 0.5rem;
+
+        &:hover {
+          background-color: rgba(255, 98, 0, 0.293) !important;
+        }
+  
+        &.active {
+          background-color: rgba(255, 98, 0, 0.482) !important;
+        }
+      }
+    }
+
+    .accordion-button {
+      &:hover {
+        background-color: rgba(255, 98, 0, 0.293) !important;
+      }
+
+      &.active {
+        background-color: rgba(255, 98, 0, 0.482) !important;
+      }
+    }
+
+    .accordion {
+      .accordion-body {
+        padding: 0 0 0 1.25rem;
+      }
+    }
   }
 }
 
@@ -22,18 +61,8 @@
   .navbar-toggler {
     position: relative;
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-
-    span {
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      border-radius: 2px;
-      opacity: 1;
-      background: #283448;
-    }
+    padding: 0.2rem;
+    border-radius: 2px;
+    border: 2px solid $secondary;
   }
 }

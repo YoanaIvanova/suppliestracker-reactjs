@@ -1,6 +1,9 @@
 @use "~bootstrap/scss/bootstrap" with (
-  $theme-colors: (
-    primary: #ffe4c0,
-    secondary: #ffbbbb
-  )
+  $primary: #10265f,
+  $secondary: #fcd900,
+  $light: #a7baec
 );
+
+.font-accent {
+  font-family: "Fredoka One", "Asap", sans-serif;
+}
