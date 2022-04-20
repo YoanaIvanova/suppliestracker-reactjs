@@ -13,4 +13,20 @@ export const initCollections = () => {
   }
 };
 
-export const getCollectionsCount = () => JSON.parse(localStorage.getItem("collections")).collections.length;
+export const getCollectionsCount = () => {
+  const collections = localStorage.getItem("collections");
+
+  if (collections) {
+    return JSON.parse(localStorage.getItem("collections")).collections.length;
+  }
+};
+
+export const getCollections = () => {
+  const collections = localStorage.getItem("collections");
+
+  if (collections) {
+    return JSON.parse(localStorage.getItem("collections")).collections;
+  } else {
+      return [];
+  }
+};

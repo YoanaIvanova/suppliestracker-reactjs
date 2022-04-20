@@ -1,7 +1,11 @@
 import { Container, Row, Col } from "react-bootstrap";
+
 import CollectionCard from "../components/Collection/CollectionCard";
+import { getCollections } from "../utils/CollectionHelper";
 
 const CollectionList = () => {
+  const collections = getCollections();
+
   return (
     <Container fluid>
       <Row className="text-center mt-4 mb-3">
@@ -10,30 +14,11 @@ const CollectionList = () => {
         </Col>
       </Row>
       <Row className="px-4">
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
-        <Col md={4} className="p-2 d-flex justify-content-center">
-          <CollectionCard />
-        </Col>
+        {collections.map((collection, index) => (
+          <Col key={index} md={6} lg={6} xl={4} className="p-2 d-flex justify-content-center">
+            <CollectionCard collection={collection} />
+          </Col>
+        ))}
       </Row>
     </Container>
   );

@@ -11,11 +11,13 @@ import {
 } from "react-icons/gi";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { ImPencil2 } from "react-icons/im";
+import { BsGrid1X2Fill } from "react-icons/bs";
 
-import { getCollectionsCount } from "../../utils/CollectionHelper";
+import { getCollections } from "../../utils/CollectionHelper";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
+  const collections = getCollections();
 
   return (
     <>
@@ -50,48 +52,62 @@ const Sidebar = () => {
           >
             <AiOutlineCloseSquare size="2em" />
           </Nav.Link>
+
           <Nav.Link
             as={Link}
             to="/collections"
             className="text-secondary d-flex justify-content-between align-items-center"
           >
-            <span className="menu-item">
-              <span className="menu-icon me-2">
-                <ImPencil2 />
-              </span>
-              Collections
-              <Badge pill className="bg-light ms-2">
-                {getCollectionsCount()}
-              </Badge>
+            <span>
+              <BsGrid1X2Fill className="me-2" />
+              All Collections
             </span>
           </Nav.Link>
 
           <Accordion as={Nav.Item}>
-            <Accordion.Item className="bg-primary">
+            <Accordion.Item className="bg-primary" eventKey="0">
               <Accordion.Button
                 as={Nav.Link}
                 className="d-flex justify-content-between align-items-center bg-primary text-secondary"
               >
                 <span>
-                  <GiHearts className="me-2" />
-                  Favorites
+                  <ImPencil2 className="me-2" />
+                  Collections
                   <Badge pill className="bg-light ms-2">
-                    999+
+                    {collections.length}
                   </Badge>
                 </span>
               </Accordion.Button>
 
               <Accordion.Body>
-                <Nav className="flex-column">
-                  <Nav.Link className="text-secondary">Test 1</Nav.Link>
-                </Nav>
-
-                <Nav className="flex-column">
-                  <Nav.Link className="text-secondary">Test 2</Nav.Link>
-                </Nav>
+                {collections.map((collection, index) => (
+                  <Nav key={index} className="flex-column">
+                    <Nav.Link
+                      className="text-secondary"
+                      as={Link}
+                      to="/collection"
+                    >
+                      {collection.name}
+                    </Nav.Link>
+                  </Nav>
+                ))}
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
+
+          <Nav.Link
+            as={Link}
+            to="/favorites"
+            className="text-secondary d-flex justify-content-between align-items-center"
+          >
+            <span>
+              <GiHearts className="me-2" />
+              Favorites
+              <Badge pill className="bg-light ms-2">
+                999+
+              </Badge>
+            </span>
+          </Nav.Link>
 
           <Nav.Link className="text-secondary" eventKey="link-2">
             <GiRainbowStar size="1.3em" className="me-1" />

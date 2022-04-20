@@ -1,15 +1,14 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const CollectionCard = () => {
+const CollectionCard = (props) => {
   return (
-    <Card>
+    <Card className="w-100">
       <Card.Body>
-        <Card.Title>Collection Name</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">999+ items</Card.Subtitle>
+        <Card.Title>{props.collection.name}</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">{props.collection.items.length} items</Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {props.collection.description}
         </Card.Text>
         <Link className="btn btn-secondary" role="button" to="/collection">
           View colleciton

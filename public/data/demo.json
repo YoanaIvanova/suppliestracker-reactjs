@@ -67,6 +67,15 @@
           "colorName": "Orange",
           "shape": "CIRCLE",
           "status": "WANT"
+        },
+        {
+          "code": 4,
+          "name": "Salmon Alcohol Marker",
+          "description": "My Salmon Alcohol Marker",
+          "color": "#FA8072",
+          "colorName": "Salmon",
+          "shape": "CIRCLE",
+          "status": "OWN"
         }
       ]
     },
