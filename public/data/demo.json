@@ -1,0 +1,100 @@
+{
+  "collections": [
+    {
+      "code": 1,
+      "name": "Acrylic Markers",
+      "description": "Acrylic Marker Colleciton",
+      "defaultItemShape": "CIRCLE",
+      "items": [
+        {
+          "code": 1,
+          "name": "Red Acrylic Marker",
+          "description": "My Red Acrylic Marker",
+          "color": "#DC143C",
+          "colorName": "Red",
+          "shape": "CIRCLE",
+          "status": "OWN"
+        },
+        {
+          "code": 2,
+          "name": "Yellow Acrylic Marker",
+          "description": "Yellow Acrylic Marker",
+          "color": "#FFFF66",
+          "colorName": "Yellow",
+          "shape": "CIRCLE",
+          "status": "WANT"
+        },
+        {
+          "code": 3,
+          "name": "Blue Acrylic Marker",
+          "description": "Blue Acrylic Marker",
+          "color": "#1E90FF",
+          "colorName": "Blue",
+          "shape": "CIRCLE",
+          "status": "DO_NOT_WANT"
+        }
+      ]
+    },
+    {
+      "code": 2,
+      "name": "Alcohol Markers",
+      "description": "Alcohol Marker Colleciton",
+      "defaultItemShape": "SQUARE",
+      "items": [
+        {
+          "code": 1,
+          "name": "Green Alcohol Marker",
+          "description": "My Green Alcohol Marker",
+          "color": "#7CFC00",
+          "colorName": "Green",
+          "shape": "SQUARE",
+          "status": "OWN"
+        },
+        {
+          "code": 2,
+          "name": "Purple Alcohol Marker",
+          "description": "My Purple Alcohol Marker",
+          "color": "#9370DB",
+          "colorName": "Purple",
+          "shape": "SQUARE",
+          "status": "OWN"
+        },
+        {
+          "code": 3,
+          "name": "Orange Alcohol Marker",
+          "description": "Orange Alcohol Marker",
+          "color": "#FF7F50",
+          "colorName": "Orange",
+          "shape": "CIRCLE",
+          "status": "WANT"
+        }
+      ]
+    },
+    {
+      "code": 3,
+      "name": "Watercolor Pencils",
+      "description": "Watercolor Pencils Colleciton",
+      "defaultItemShape": "CIRCLE",
+      "items": [
+        {
+          "code": 1,
+          "name": "Pink Watercolor Pencil",
+          "description": "My Pink Acrylic Marker",
+          "color": "#FF69B4",
+          "colorName": "Pink",
+          "shape": "CIRCLE",
+          "status": "OWN"
+        },
+        {
+          "code": 2,
+          "name": "Brown Watercolor Pencil",
+          "description": "My Brown Watercolor Pencil",
+          "color": "#8B4513",
+          "colorName": "Brown",
+          "shape": "CIRCLE",
+          "status": "OWN"
+        }
+      ]
+    }
+  ]
+}

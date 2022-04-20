@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 
-const CollectionsPage = () => {
+const Collection = () => {
   return (
     <Container fluid>
       <Row className="text-center mt-4 mb-3">
@@ -79,4 +79,4 @@ const CollectionsPage = () => {
   );
 };
 
-export default CollectionsPage;
+export default Collection;

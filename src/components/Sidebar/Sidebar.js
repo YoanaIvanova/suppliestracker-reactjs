@@ -2,6 +2,7 @@ import "./Sidebar.scss";
 
 import { Accordion, Nav, Navbar, Badge } from "react-bootstrap";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   GiPencilBrush,
   GiHamburgerMenu,
@@ -10,6 +11,8 @@ import {
 } from "react-icons/gi";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { ImPencil2 } from "react-icons/im";
+
+import { getCollectionsCount } from "../../utils/CollectionHelper";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
@@ -48,8 +51,9 @@ const Sidebar = () => {
             <AiOutlineCloseSquare size="2em" />
           </Nav.Link>
           <Nav.Link
+            as={Link}
+            to="/collections"
             className="text-secondary d-flex justify-content-between align-items-center"
-            href="/home"
           >
             <span className="menu-item">
               <span className="menu-icon me-2">
@@ -57,7 +61,7 @@ const Sidebar = () => {
               </span>
               Collections
               <Badge pill className="bg-light ms-2">
-                999+
+                {getCollectionsCount()}
               </Badge>
             </span>
           </Nav.Link>
