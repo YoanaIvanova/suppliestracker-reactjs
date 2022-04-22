@@ -27,9 +27,9 @@ const Sidebar = () => {
         >
           <GiHamburgerMenu size="1.2em" />
         </Navbar.Toggle>
-        <Navbar.Brand href="#home" className="ps-3 text-secondary">
+        <Navbar.Brand href="#home" className="ps-3">
           <GiPencilBrush size="1.5em" className="me-2" />
-          <span className="font-accent">Supplies Tracker</span>
+          <span className="font-logo">Supplies Tracker</span>
         </Navbar.Brand>
       </Navbar>
 
@@ -39,9 +39,9 @@ const Sidebar = () => {
         } sidebar h-100 bg-primary px-4 d-md-block`}
       >
         <Nav defaultActiveKey="/home" className="flex-column sidebar-menu">
-          <Navbar.Brand href="#home" className="p-0 mt-5 mb-4 text-secondary">
+          <Navbar.Brand href="#home" className="p-0 mt-5 mb-4">
             <GiPencilBrush size="1.5em" className="me-2" />
-            <span className="font-accent">Supplies Tracker</span>
+            <span className="font-logo">Supplies Tracker</span>
           </Navbar.Brand>
 
           <Nav.Link
@@ -66,7 +66,7 @@ const Sidebar = () => {
             <Accordion.Item className="bg-primary" eventKey="0">
               <Accordion.Button
                 as={Nav.Link}
-                className="d-flex justify-content-between align-items-center bg-primary text-secondary"
+                className="d-flex justify-content-between align-items-center"
               >
                 <span>
                   <ImPencil2 className="me-2" />

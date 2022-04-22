@@ -2,14 +2,22 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/mixins";
 
-// Override Bootstrap defaults
+@import "scss/fonts";
+
+// Override Bootstrap default variables
 @import "scss/custom";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+// Custom functions
+@import "scss/functions";
 
 // Global app styles
 @import "scss/global";
 
 // Component styles
 @import "scss/components";
+
+// View styles
+@import "scss/views";

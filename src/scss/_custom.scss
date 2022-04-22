@@ -2,6 +2,22 @@
  * Custom variables, including Bootstrap overrides
  **/
 
+/** Bootstrap overrides **/
+
+// Colors
 $primary: #10265f;
 $secondary: #fcd900;
 $light: #a7baec;
+
+$body-bg: #f8f9fa;
+
+$accordion-icon-color: $secondary;
+$accordion-icon-active-color: $secondary;
+
+/** Custom variables **/
+
+// Colors
+$outline: #4b3c8a;
+
+// Other variables
+$sidebar-width: 300px;

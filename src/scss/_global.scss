@@ -4,11 +4,8 @@
 
 body {
   height: 100vh;
-  background-color: $gray-100;
   margin: 0;
-  font-family: "Asap", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: $font-family-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,72 +16,10 @@ body {
 
 .content {
   @include media-breakpoint-up(md) {
-    margin-left: 300px;
+    margin-left: $sidebar-width;
   }
 }
 
-.font-accent {
-  font-family: "Fredoka One", "Asap", sans-serif;
-}
-
-.font-1 {
-  font-family: "Sniglet", cursive;
-  font-weight: 300;
-}
-
-.font-2 {
-  font-family: "Sniglet", cursive;
-  font-weight: 800;
-}
-
-.font-3 {
-  font-family: "Modak", sans-serif;
-}
-
-.gradient-text-1 {
-  background: linear-gradient(to right, #35bb87, #ffb805 70%);
-}
-
-.gradient-text-2 {
-  background-image: linear-gradient(60deg, #e21143, #ffb03a);
-  background-clip: text;
-  color: transparent;
-}
-
-.gradient-text-3 {
-  background: -webkit-linear-gradient(rgb(91, 192, 226), rgb(72, 28, 158));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.circle-dot {
-  border: 2px solid red;
-  border-radius: 100%;
-  position: relative;
-  width: 3em;
-  height: 3em;
-}
-
-.circle-dot::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 1.5em;
-  height: 1.5em;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: red;
-  border-radius: 100%;
-}
-
-.items-pane {
-  .item {
-    border-radius: 1rem;
-
-    &:hover {
-      background-color: #bdebd9;
-      cursor: pointer;
-    }
-  }
+.font-logo {
+  font-family: $font-family-secondary;
 }

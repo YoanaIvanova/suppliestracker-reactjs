@@ -9,43 +9,74 @@
   width: 100%;
 
   @include media-breakpoint-up(md) {
-    max-width: 300px;
+    max-width: $sidebar-width;
   }
 
   .sidebar-menu {
     .navbar-brand {
       width: fit-content;
+      color: $secondary;
+
+      &:hover {
+        color: $secondary;
+      }
     }
 
     .nav-link {
+      &.collapse-close {
+        color: $secondary;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+
       &:not(.collapse-close) {
         color: $secondary;
         border-radius: 0.5rem;
-        border: 1px solid #4b3c8a;
+        border: 1px solid $outline;
         padding: 0.6rem 1rem;
         margin-bottom: 0.5rem;
 
         &:hover {
-          background-color: rgba(255, 98, 0, 0.293) !important;
+          background-color: shade-color($outline, 25%);
         }
-  
+
         &.active {
-          background-color: rgba(255, 98, 0, 0.482) !important;
+          background-color: shade-color($outline, 10%);
         }
       }
     }
 
     .accordion-button {
+      background-color: $primary;
+
+      &.collapsed {
+        &::after {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{url-encoded-color($secondary)}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+        }
+      }
+
+      &:not(.collapsed) {
+        &::after {
+          background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{url-encoded-color($secondary)}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+        }
+      }
+
       &:hover {
-        background-color: rgba(255, 98, 0, 0.293) !important;
+        background-color: shade-color($outline, 25%);
       }
 
       &.active {
-        background-color: rgba(255, 98, 0, 0.482) !important;
+        background-color: shade-color($outline, 10%);
       }
     }
 
     .accordion {
+      .accordion-item {
+        border: none;
+      }
+
       .accordion-body {
         padding: 0 0 0 1.25rem;
       }
@@ -54,6 +85,14 @@
 }
 
 .top-mobile-navbar {
+  .navbar-brand {
+    color: $secondary;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+
   .navbar-toggler {
     position: relative;
     display: inline-block;
