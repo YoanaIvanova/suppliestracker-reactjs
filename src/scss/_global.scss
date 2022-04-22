@@ -2,10 +2,6 @@
  * Global App styles
  **/
 
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-
 body {
   height: 100vh;
   background-color: $gray-100;
@@ -85,7 +81,7 @@ body {
 .items-pane {
   .item {
     border-radius: 1rem;
-    
+
     &:hover {
       background-color: #bdebd9;
       cursor: pointer;

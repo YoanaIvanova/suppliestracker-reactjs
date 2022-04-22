@@ -1,7 +1,3 @@
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
-
 .sidebar {
   display: block;
   position: fixed;
@@ -23,7 +19,7 @@
 
     .nav-link {
       &:not(.collapse-close) {
-        color: $primary;
+        color: $secondary;
         border-radius: 0.5rem;
         border: 1px solid #4b3c8a;
         padding: 0.6rem 1rem;

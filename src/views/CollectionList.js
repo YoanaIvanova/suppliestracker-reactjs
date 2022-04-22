@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 
-import CollectionCard from "../components/Collection/CollectionCard";
+import CollectionCard from "../components/CollectionCard";
 import { getCollections } from "../utils/CollectionHelper";
 
 const CollectionList = () => {

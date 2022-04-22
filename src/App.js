@@ -1,11 +1,9 @@
-import "./App.scss";
-
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import CollectionList from "./views/CollectionList";
 import Collection from "./views/Collection";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Sidebar from "./components/Sidebar";
 import { initCollections } from "./utils/CollectionHelper";
 
 const App = () => {

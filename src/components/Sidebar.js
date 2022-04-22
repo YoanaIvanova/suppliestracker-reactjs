@@ -1,5 +1,3 @@
-import "./Sidebar.scss";
-
 import { Accordion, Nav, Navbar, Badge } from "react-bootstrap";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -13,7 +11,7 @@ import { AiOutlineCloseSquare } from "react-icons/ai";
 import { ImPencil2 } from "react-icons/im";
 import { BsGrid1X2Fill } from "react-icons/bs";
 
-import { getCollections } from "../../utils/CollectionHelper";
+import { getCollections } from "../utils/CollectionHelper";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
@@ -47,7 +45,7 @@ const Sidebar = () => {
           </Navbar.Brand>
 
           <Nav.Link
-            className="collapse-close d-md-none text-secondary text-end pe-0"
+            className="collapse-close d-md-none text-end pe-0"
             onClick={() => setShow(!show)}
           >
             <AiOutlineCloseSquare size="2em" />
@@ -56,7 +54,7 @@ const Sidebar = () => {
           <Nav.Link
             as={Link}
             to="/collections"
-            className="text-secondary d-flex justify-content-between align-items-center"
+            className="d-flex justify-content-between align-items-center"
           >
             <span>
               <BsGrid1X2Fill className="me-2" />
@@ -83,7 +81,6 @@ const Sidebar = () => {
                 {collections.map((collection, index) => (
                   <Nav key={index} className="flex-column">
                     <Nav.Link
-                      className="text-secondary"
                       as={Link}
                       to="/collection"
                     >
@@ -98,7 +95,7 @@ const Sidebar = () => {
           <Nav.Link
             as={Link}
             to="/favorites"
-            className="text-secondary d-flex justify-content-between align-items-center"
+            className="d-flex justify-content-between align-items-center"
           >
             <span>
               <GiHearts className="me-2" />
@@ -109,7 +106,7 @@ const Sidebar = () => {
             </span>
           </Nav.Link>
 
-          <Nav.Link className="text-secondary" eventKey="link-2">
+          <Nav.Link eventKey="link-2">
             <GiRainbowStar size="1.3em" className="me-1" />
             Wishlist
           </Nav.Link>
