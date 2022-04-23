@@ -1,5 +1,5 @@
 import { Accordion, Nav, Navbar, Badge } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import {
   GiPencilBrush,
@@ -11,11 +11,11 @@ import { AiOutlineCloseSquare } from "react-icons/ai";
 import { ImPencil2 } from "react-icons/im";
 import { BsGrid1X2Fill } from "react-icons/bs";
 
-import { getCollections } from "../utils/CollectionHelper";
+import { CollectionsContext } from "../providers/CollectionsProvider";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
-  const collections = getCollections();
+  const collections = useContext(CollectionsContext);
 
   return (
     <>
@@ -83,8 +83,10 @@ const Sidebar = () => {
                     <Nav.Link
                       as={Link}
                       to="/collection"
+                      className="d-flex justify-content-between"
                     >
-                      {collection.name}
+                      <span>{collection.name}</span>
+                      <span>{collection.items.length}</span>
                     </Nav.Link>
                   </Nav>
                 ))}

@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import CollectionList from "./views/CollectionList";
+import CollectionsProvider from "./providers/CollectionsProvider";
+import CollectionsList from "./views/CollectionsList";
 import Collection from "./views/Collection";
 import Sidebar from "./components/Sidebar";
-import { initCollections } from "./utils/CollectionHelper";
+import { initCollections } from "./utils/CollectionsHelper";
 
 const App = () => {
   useEffect(() => {
@@ -13,15 +14,17 @@ const App = () => {
 
   return (
     <Router>
-      <Sidebar />
+      <CollectionsProvider>
+        <Sidebar />
 
-      <main className="content h-100">
-        <Routes>
-          <Route exact path="/" element={<CollectionList />} />
-          <Route path="/collections" element={<CollectionList />} />
-          <Route path="/collection" element={<Collection />} />
-        </Routes>
-      </main>
+        <main className="content h-100">
+          <Routes>
+            <Route exact path="/" element={<CollectionsList />} />
+            <Route path="/collections" element={<CollectionsList />} />
+            <Route path="/collection" element={<Collection />} />
+          </Routes>
+        </main>
+      </CollectionsProvider>
     </Router>
   );
 };

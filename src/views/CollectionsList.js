@@ -1,10 +1,11 @@
+import { useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
+import { CollectionsContext } from "../providers/CollectionsProvider";
 import CollectionCard from "../components/CollectionCard";
-import { getCollections } from "../utils/CollectionHelper";
 
-const CollectionList = () => {
-  const collections = getCollections();
+const CollectionsList = () => {
+  const collections = useContext(CollectionsContext);
 
   return (
     <Container fluid>
@@ -15,7 +16,13 @@ const CollectionList = () => {
       </Row>
       <Row className="px-4">
         {collections.map((collection, index) => (
-          <Col key={index} md={6} lg={6} xl={4} className="p-2 d-flex justify-content-center">
+          <Col
+            key={index}
+            md={6}
+            lg={6}
+            xl={4}
+            className="p-2 d-flex justify-content-center"
+          >
             <CollectionCard collection={collection} />
           </Col>
         ))}
@@ -24,4 +31,4 @@ const CollectionList = () => {
   );
 };
 
-export default CollectionList;
+export default CollectionsList;
