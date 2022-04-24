@@ -104,6 +104,85 @@
           "status": "OWN"
         }
       ]
+    },
+    {
+      "code": 4,
+      "name": "Oil Pastels",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper tincidunt diam, eu scelerisque arcu suscipit sed. Aliquam consectetur, ante eget lacinia euismod, ipsum mauris pretium tortor, a euismod nulla nulla sit amet felis.",
+      "defaultItemShape": "CIRCLE",
+      "items": [
+        {
+          "code": 1,
+          "name": "Red Oil Pastel",
+          "description": "My Red Oil Pastel",
+          "color": "#DC143C",
+          "colorName": "Red",
+          "shape": "CIRCLE",
+          "status": "OWN"
+        },
+        {
+          "code": 2,
+          "name": "Blue Oil Pastel",
+          "description": "My Blue Oil Pastel",
+          "color": "#1E90FF",
+          "colorName": "Blue",
+          "shape": "CIRCLE",
+          "status": "WANT"
+        },
+        {
+          "code": 4,
+          "name": "Orange Oil Pastel",
+          "description": "Orange Oil Pastel",
+          "color": "#FF7F50",
+          "colorName": "Orange",
+          "shape": "CIRCLE",
+          "status": "WANT"
+        },
+        {
+          "code": 5,
+          "name": "Brown Oil Pastel",
+          "description": "My Brown Oil Pastel",
+          "color": "#8B4513",
+          "colorName": "Brown",
+          "shape": "CIRCLE",
+          "status": "OWN"
+        },
+        {
+          "code": 6,
+          "name": "Salmon Oil Pastel",
+          "description": "Salmon Oil Pastel",
+          "color": "#FA8072",
+          "colorName": "Salmon",
+          "shape": "CIRCLE",
+          "status": "DO_NOT_WANT"
+        }
+      ]
+    },
+    {
+      "code": 5,
+      "name": "Gouache Paint",
+      "description": "Gouache Paint Colleciton",
+      "defaultItemShape": "SQUARE",
+      "items": [
+        {
+          "code": 1,
+          "name": "Yellow Gouache Paint",
+          "description": "My Yellow Gouache Paint",
+          "color": "#FFFF66",
+          "colorName": "Yellow",
+          "shape": "SQUARE",
+          "status": "OWN"
+        },
+        {
+          "code": 2,
+          "name": "Brown Gouache Paint",
+          "description": "My Brown Gouache Paint",
+          "color": "#8B4513",
+          "colorName": "Brown",
+          "shape": "SQUARE",
+          "status": "OWN"
+        }
+      ]
     }
   ]
 }

@@ -21,7 +21,7 @@ const CollectionsList = () => {
             md={6}
             lg={6}
             xl={4}
-            className="p-2 d-flex justify-content-center"
+            className="collection-wrapper d-flex justify-content-center"
           >
             <CollectionCard collection={collection} />
           </Col>

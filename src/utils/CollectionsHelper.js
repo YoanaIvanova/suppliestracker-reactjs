@@ -1,5 +1,7 @@
-export const initCollections = () => {
-  if (!localStorage.getItem("collections")) {
+export const initCollections = (setCollections) => {
+  const collectionsJson = localStorage.getItem("collections");
+  
+  if (!collectionsJson) {
     fetch("data/demo.json", {
       headers: {
         "Content-Type": "application/json",
@@ -7,18 +9,13 @@ export const initCollections = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) =>
-        localStorage.setItem("collections", JSON.stringify(data))
-      );
-  }
-};
-
-export const getCollections = () => {
-  const collections = localStorage.getItem("collections");
-
-  if (collections) {
-    return JSON.parse(localStorage.getItem("collections")).collections;
+      .then((data) => {
+        if (data) {
+          setCollections(data.collections);
+          localStorage.setItem("collections", JSON.stringify(data));
+        }
+      });
   } else {
-      return [];
+    setCollections(JSON.parse(collectionsJson).collections);
   }
 };

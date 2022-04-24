@@ -1,17 +1,11 @@
-import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import CollectionsProvider from "./providers/CollectionsProvider";
 import CollectionsList from "./views/CollectionsList";
 import Collection from "./views/Collection";
 import Sidebar from "./components/Sidebar";
-import { initCollections } from "./utils/CollectionsHelper";
 
 const App = () => {
-  useEffect(() => {
-    initCollections();
-  }, []);
-
   return (
     <Router>
       <CollectionsProvider>
