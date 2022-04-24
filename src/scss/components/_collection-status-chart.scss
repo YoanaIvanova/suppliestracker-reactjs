@@ -1,0 +1,7 @@
+.status-chart {
+  max-height: 7rem;
+
+  @include media-breakpoint-up(md) {
+    max-height: 6.25rem;
+  }
+}
