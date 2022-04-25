@@ -3,27 +3,19 @@
  **/
 
 body {
-  height: 100vh;
+  height: 100%;
   margin: 0;
   font-family: $font-family-primary;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
-  height: 100%;
-}
-
 .content {
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     margin-left: $sidebar-width;
   }
 }
 
 .font-logo {
   font-family: $font-family-secondary;
-}
-
-.btn-secondary {
-  color: $body-color;
 }

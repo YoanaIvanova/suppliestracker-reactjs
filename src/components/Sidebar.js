@@ -19,7 +19,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <Navbar bg="primary" className="top-mobile-navbar d-md-none px-3">
+      <Navbar bg="primary" className="top-mobile-navbar d-lg-none px-3">
         <Navbar.Toggle
           aria-controls="main-navbar"
           onClick={() => setShow(!show)}
@@ -36,7 +36,7 @@ const Sidebar = () => {
       <div
         className={`collapse ${
           show ? "show" : ""
-        } sidebar h-100 bg-primary px-4 d-md-block`}
+        } sidebar h-100 bg-primary px-4 d-lg-block`}
       >
         <Nav defaultActiveKey="/home" className="flex-column sidebar-menu">
           <Navbar.Brand href="#home" className="p-0 mt-5 mb-4">
@@ -45,7 +45,7 @@ const Sidebar = () => {
           </Navbar.Brand>
 
           <Nav.Link
-            className="collapse-close d-md-none text-end pe-0"
+            className="collapse-close d-lg-none text-end pe-0"
             onClick={() => setShow(!show)}
           >
             <AiOutlineCloseSquare size="2em" />

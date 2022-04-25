@@ -16,6 +16,10 @@ $body-color: $primary;
 $accordion-icon-color: $secondary;
 $accordion-icon-active-color: $secondary;
 
+.btn-secondary {
+  color: $body-color;
+}
+
 /** Custom variables **/
 
 // Colors
