@@ -21,3 +21,8 @@
 
 // View styles
 @import "scss/views";
+
+:root {
+  --outline: #{$outline};
+  --highlight-outline: #{$highlight-outline};
+}

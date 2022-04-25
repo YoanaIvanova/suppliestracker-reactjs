@@ -32,7 +32,13 @@ const CollectionCard = (props) => {
         <Row className="mb-3 justify-content-center align-items-center">
           <Col md={7}>
             <Card.Text className="d-flex flex-column">
-              <span className={`${shouldTruncate && showMore ? "description expanded" : "description"}`}>
+              <span
+                className={`${
+                  shouldTruncate && showMore
+                    ? "description expanded"
+                    : "description"
+                }`}
+              >
                 {shouldTruncate
                   ? showMore
                     ? props.collection.description
@@ -60,7 +66,7 @@ const CollectionCard = (props) => {
         <Link
           className="btn btn-secondary view-link mt-auto d-flex align-items-center justify-content-center"
           role="button"
-          to="/collection"
+          to={`/collection/${props.collection.id}`}
         >
           <FaRegEye className="me-1" />
           View details

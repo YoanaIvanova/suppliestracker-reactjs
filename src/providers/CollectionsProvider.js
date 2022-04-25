@@ -11,8 +11,17 @@ const CollectionsProvider = (props) => {
     initCollections(setCollections);
   }, []);
 
+  const getCollectionWithId = (id) => {
+    return collections.filter((col) => col.id == id)[0];
+  };
+
   return (
-    <CollectionsContext.Provider value={collections}>
+    <CollectionsContext.Provider
+      value={{
+        collections,
+        getCollectionWithId,
+      }}
+    >
       {props.children}
     </CollectionsContext.Provider>
   );

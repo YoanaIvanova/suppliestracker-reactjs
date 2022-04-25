@@ -15,7 +15,7 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<CollectionsList />} />
             <Route path="/collections" element={<CollectionsList />} />
-            <Route path="/collection" element={<Collection />} />
+            <Route path="/collection/:id" element={<Collection />} />
           </Routes>
         </main>
       </CollectionsProvider>

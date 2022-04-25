@@ -5,7 +5,7 @@ import { CollectionsContext } from "../providers/CollectionsProvider";
 import CollectionCard from "../components/CollectionCard";
 
 const CollectionsList = () => {
-  const collections = useContext(CollectionsContext);
+  const collectionsContext = useContext(CollectionsContext);
 
   return (
     <Container fluid>
@@ -15,7 +15,7 @@ const CollectionsList = () => {
         </Col>
       </Row>
       <Row className="px-4">
-        {collections.map((collection, index) => (
+        {collectionsContext.collections.map((collection, index) => (
           <Col
             key={index}
             md={6}

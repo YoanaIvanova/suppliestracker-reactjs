@@ -15,7 +15,7 @@ import { CollectionsContext } from "../providers/CollectionsProvider";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
-  const collections = useContext(CollectionsContext);
+  const collectionsContext = useContext(CollectionsContext);
 
   return (
     <>
@@ -72,17 +72,17 @@ const Sidebar = () => {
                   <ImPencil2 className="me-2" />
                   Collections
                   <Badge pill className="bg-light ms-2">
-                    {collections.length}
+                    {collectionsContext.collections.length}
                   </Badge>
                 </span>
               </Accordion.Button>
 
               <Accordion.Body>
-                {collections.map((collection, index) => (
+                {collectionsContext.collections.map((collection, index) => (
                   <Nav key={index} className="flex-column">
                     <Nav.Link
                       as={Link}
-                      to="/collection"
+                      to={`/collection/${collection.id}`}
                       className="d-flex justify-content-between"
                     >
                       <span>{collection.name}</span>

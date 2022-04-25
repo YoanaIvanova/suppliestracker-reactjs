@@ -1,190 +1,40 @@
+import { useState, useEffect, useContext } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+
+import { CollectionsContext } from "../providers/CollectionsProvider";
+import CollectionItem from "../components/CollectionItem";
 
 const Collection = () => {
+  const { id } = useParams();
+  const collectionsContext = useContext(CollectionsContext);
+  const [collection, setCollection] = useState([]);
+
+  useEffect(() => {
+    setCollection(collectionsContext.getCollectionWithId(id));
+  }, [collectionsContext, id]);
+
   return (
     <Container fluid>
       <Row className="text-center mt-4 mb-3">
         <Col>
-          {/* <h1 className="fw-bold collection-heading-2">
-            Alcohol Markers
-          </h1>
-          <h1 className="display-4 collection-heading-3">
-            Acrylic Markers
-          </h1> */}
           <h1 className="display-4 collection-heading mb-0">
-            Watercolor Pencils
+            {collection?.name}
           </h1>
         </Col>
       </Row>
-      <Row className="items-pane px-4">
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
-        <Col
-          xs={3}
-          sm={2}
-          xl={1}
-          className="item px-2 py-3 d-flex justify-content-center"
-        >
-          <div className="circle-dot"></div>
-        </Col>
+      <Row className="items-pane px-2 px-md-4">
+        {collection?.items?.map((item, index) => (
+          <Col
+            xs={4}
+            sm={2}
+            xl={1}
+            key={index}
+            className="item px-2 py-3 d-flex justify-content-center align-items-center"
+          >
+            <CollectionItem item={item} />
+          </Col>
+        ))}
       </Row>
     </Container>
   );
