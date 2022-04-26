@@ -1,6 +1,6 @@
 import { Accordion, Nav, Navbar, Badge } from "react-bootstrap";
-import { useState, useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import {
   GiPencilBrush,
   GiHamburgerMenu,
@@ -14,15 +14,25 @@ import { BsGrid1X2Fill } from "react-icons/bs";
 import { CollectionsContext } from "../providers/CollectionsProvider";
 
 const Sidebar = () => {
-  const [show, setShow] = useState(false);
+  const location = useLocation();
   const collectionsContext = useContext(CollectionsContext);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [accordionActiveKey, setAccordionActiveKey] = useState(
+    location.pathname.indexOf("collection/") !== -1 ? "collection/" : ""
+  );
+
+  useEffect(() => {
+    setAccordionActiveKey(
+      location.pathname.indexOf("collection/") !== -1 ? "collection/" : ""
+    );
+  }, [location]);
 
   return (
     <>
       <Navbar bg="primary" className="top-mobile-navbar d-lg-none px-3">
         <Navbar.Toggle
           aria-controls="main-navbar"
-          onClick={() => setShow(!show)}
+          onClick={() => setShowMobileNav(!showMobileNav)}
           className="text-secondary"
         >
           <GiHamburgerMenu size="1.2em" />
@@ -35,7 +45,7 @@ const Sidebar = () => {
 
       <div
         className={`collapse ${
-          show ? "show" : ""
+          showMobileNav ? "show" : ""
         } sidebar h-100 bg-primary px-4 d-lg-block`}
       >
         <Nav className="flex-column sidebar-menu">
@@ -46,7 +56,7 @@ const Sidebar = () => {
 
           <Nav.Link
             className="collapse-close d-lg-none text-end pe-0"
-            onClick={() => setShow(!show)}
+            onClick={() => setShowMobileNav(false)}
           >
             <AiOutlineCloseSquare size="2em" />
           </Nav.Link>
@@ -62,8 +72,12 @@ const Sidebar = () => {
             </span>
           </Nav.Link>
 
-          <Accordion as={Nav.Item}>
-            <Accordion.Item className="bg-primary" eventKey="0">
+          <Accordion
+            as={Nav.Item}
+            activeKey={accordionActiveKey}
+            onSelect={(e) => setAccordionActiveKey(e)}
+          >
+            <Accordion.Item className="bg-primary" eventKey="collection/">
               <Accordion.Button
                 as={NavLink}
                 to="/collection"
