@@ -1,6 +1,6 @@
 import { Accordion, Nav, Navbar, Badge } from "react-bootstrap";
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
   GiPencilBrush,
   GiHamburgerMenu,
@@ -27,7 +27,7 @@ const Sidebar = () => {
         >
           <GiHamburgerMenu size="1.2em" />
         </Navbar.Toggle>
-        <Navbar.Brand href="#home" className="ps-3">
+        <Navbar.Brand as={Link} to="/collections" className="ps-3">
           <GiPencilBrush size="1.5em" className="me-2" />
           <span className="font-logo">Supplies Tracker</span>
         </Navbar.Brand>
@@ -38,8 +38,8 @@ const Sidebar = () => {
           show ? "show" : ""
         } sidebar h-100 bg-primary px-4 d-lg-block`}
       >
-        <Nav defaultActiveKey="/home" className="flex-column sidebar-menu">
-          <Navbar.Brand href="#home" className="p-0 mt-5 mb-4">
+        <Nav className="flex-column sidebar-menu">
+          <Navbar.Brand as={Link} to="/collections" className="p-0 mt-5 mb-4">
             <GiPencilBrush size="1.5em" className="me-2" />
             <span className="font-logo">Supplies Tracker</span>
           </Navbar.Brand>
@@ -52,21 +52,23 @@ const Sidebar = () => {
           </Nav.Link>
 
           <Nav.Link
-            as={Link}
+            as={NavLink}
             to="/collections"
             className="d-flex justify-content-between align-items-center"
           >
             <span>
               <BsGrid1X2Fill className="me-2" />
-              All Collections
+              Overview
             </span>
           </Nav.Link>
 
           <Accordion as={Nav.Item}>
             <Accordion.Item className="bg-primary" eventKey="0">
               <Accordion.Button
-                as={Nav.Link}
-                className="d-flex justify-content-between align-items-center"
+                as={NavLink}
+                to="/collection"
+                onClick={(e) => e.preventDefault()}
+                className="d-flex justify-content-between align-items-center nav-link"
               >
                 <span>
                   <ImPencil2 className="me-2" />
@@ -81,7 +83,7 @@ const Sidebar = () => {
                 {collectionsContext.collections.map((collection, index) => (
                   <Nav key={index} className="flex-column">
                     <Nav.Link
-                      as={Link}
+                      as={NavLink}
                       to={`/collection/${collection.id}`}
                       className="d-flex justify-content-between"
                     >
@@ -95,7 +97,7 @@ const Sidebar = () => {
           </Accordion>
 
           <Nav.Link
-            as={Link}
+            as={NavLink}
             to="/favorites"
             className="d-flex justify-content-between align-items-center"
           >
@@ -108,9 +110,15 @@ const Sidebar = () => {
             </span>
           </Nav.Link>
 
-          <Nav.Link eventKey="link-2">
-            <GiRainbowStar size="1.3em" className="me-1" />
-            Wishlist
+          <Nav.Link
+            as={NavLink}
+            to="/wishlist"
+            className="d-flex justify-content-between align-items-center"
+          >
+            <span>
+              <GiRainbowStar size="1.3em" className="me-1" />
+              Wishlist
+            </span>
           </Nav.Link>
         </Nav>
       </div>

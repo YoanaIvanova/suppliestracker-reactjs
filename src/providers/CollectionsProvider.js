@@ -12,7 +12,7 @@ const CollectionsProvider = (props) => {
   }, []);
 
   const getCollectionWithId = (id) => {
-    return collections.filter((col) => col.id == id)[0];
+    return collections.filter((col) => col.id === Number(id))[0];
   };
 
   return (

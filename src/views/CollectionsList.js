@@ -11,7 +11,7 @@ const CollectionsList = () => {
     <Container fluid>
       <Row className="text-center mt-4 mb-3">
         <Col>
-          <h1 className="fw-bold mb-0">All Collections</h1>
+          <h1 className="fw-bold mb-0">Overview</h1>
         </Col>
       </Row>
       <Row className="px-4">
