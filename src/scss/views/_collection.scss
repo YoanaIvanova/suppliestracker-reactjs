@@ -17,14 +17,3 @@
   color: $gray-100;
   background: linear-gradient(to right, #35bb87, #ffb805 70%);
 }
-
-.items-pane {
-  .item {
-    border-radius: 1rem;
-
-    &:hover {
-      background-color: #bdebd9;
-      cursor: pointer;
-    }
-  }
-}

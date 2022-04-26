@@ -12,6 +12,7 @@
           "description": "My Red Acrylic Marker",
           "color": "#DC143C",
           "colorName": "Red",
+          "colorCode": "R00",
           "shape": "HEXAGON_DOT",
           "status": "OWN"
         },
@@ -21,6 +22,7 @@
           "description": "Yellow Acrylic Marker",
           "color": "#FFFF66",
           "colorName": "Yellow",
+          "colorCode": "Y01",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -30,6 +32,7 @@
           "description": "Blue Acrylic Marker",
           "color": "#1E90FF",
           "colorName": "Blue",
+          "colorCode": "B004",
           "shape": "CIRCLE",
           "status": "DO_NOT_WANT"
         }
@@ -47,6 +50,7 @@
           "description": "My Green Alcohol Marker",
           "color": "#7CFC00",
           "colorName": "Green",
+          "colorCode": "GR07",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -56,6 +60,7 @@
           "description": "My Purple Alcohol Marker",
           "color": "#9370DB",
           "colorName": "Purple",
+          "colorCode": "PU2",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -65,6 +70,7 @@
           "description": "Orange Alcohol Marker",
           "color": "#FF7F50",
           "colorName": "Orange",
+          "colorCode": "YR58",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -74,6 +80,7 @@
           "description": "My Salmon Alcohol Marker",
           "color": "#FA8072",
           "colorName": "Salmon",
+          "colorCode": "VR67",
           "shape": "HEXAGON_DOT",
           "status": "OWN"
         }
@@ -91,6 +98,7 @@
           "description": "My Pink Acrylic Marker",
           "color": "#FF69B4",
           "colorName": "Pink",
+          "colorCode": "P02",
           "shape": "CIRCLE",
           "status": "OWN"
         },
@@ -100,6 +108,7 @@
           "description": "My Brown Watercolor Pencil",
           "color": "#8B4513",
           "colorName": "Brown",
+          "colorCode": "BR400",
           "shape": "CIRCLE_DOT",
           "status": "OWN"
         }
@@ -117,6 +126,7 @@
           "description": "My Red Oil Pastel",
           "color": "#DC143C",
           "colorName": "Red",
+          "colorCode": "R00",
           "shape": "CIRCLE",
           "status": "OWN"
         },
@@ -126,6 +136,7 @@
           "description": "My Blue Oil Pastel",
           "color": "#1E90FF",
           "colorName": "Blue",
+          "colorCode": "B004",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -135,6 +146,7 @@
           "description": "Orange Oil Pastel",
           "color": "#FF7F50",
           "colorName": "Orange",
+          "colorCode": "YR58",
           "shape": "HEXAGON_DOT",
           "status": "WANT"
         },
@@ -144,6 +156,7 @@
           "description": "My Brown Oil Pastel",
           "color": "#8B4513",
           "colorName": "Brown",
+          "colorCode": "BR400",
           "shape": "CIRCLE",
           "status": "OWN"
         },
@@ -153,6 +166,7 @@
           "description": "Salmon Oil Pastel",
           "color": "#FA8072",
           "colorName": "Salmon",
+          "colorCode": "VR67",
           "shape": "HEXAGON_DOT",
           "status": "DO_NOT_WANT"
         },
@@ -162,6 +176,7 @@
           "description": "My Green Oil Pastel",
           "color": "#7CFC00",
           "colorName": "Green",
+          "colorCode": "GR07",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -171,6 +186,7 @@
           "description": "My Purple Oil Pastel",
           "color": "#9370DB",
           "colorName": "Purple",
+          "colorCode": "PU2",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -180,6 +196,7 @@
           "description": "My Yellow Oil Pastel",
           "color": "#FFFF66",
           "colorName": "Yellow",
+          "colorCode": "Y01",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -189,6 +206,7 @@
           "description": "My Pink Oil Pastel",
           "color": "#FF69B4",
           "colorName": "Pink",
+          "colorCode": "P02",
           "shape": "CIRCLE",
           "status": "OWN"
         },
@@ -198,6 +216,7 @@
           "description": "My Red Oil Pastel",
           "color": "#DC143C",
           "colorName": "Red",
+          "colorCode": "R00",
           "shape": "CIRCLE_DOT",
           "status": "OWN"
         },
@@ -207,6 +226,7 @@
           "description": "My Blue Oil Pastel",
           "color": "#1E90FF",
           "colorName": "Blue",
+          "colorCode": "B004",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -216,6 +236,7 @@
           "description": "Orange Oil Pastel",
           "color": "#FF7F50",
           "colorName": "Orange",
+          "colorCode": "YR58",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -225,6 +246,7 @@
           "description": "My Brown Oil Pastel",
           "color": "#8B4513",
           "colorName": "Brown",
+          "colorCode": "BR400",
           "shape": "CIRCLE",
           "status": "OWN"
         },
@@ -234,6 +256,7 @@
           "description": "Salmon Oil Pastel",
           "color": "#FA8072",
           "colorName": "Salmon",
+          "colorCode": "VR67",
           "shape": "HEXAGON_DOT",
           "status": "DO_NOT_WANT"
         },
@@ -243,6 +266,7 @@
           "description": "My Green Oil Pastel",
           "color": "#7CFC00",
           "colorName": "Green",
+          "colorCode": "GR07",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -252,6 +276,7 @@
           "description": "My Purple Oil Pastel",
           "color": "#9370DB",
           "colorName": "Purple",
+          "colorCode": "PU2",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -261,6 +286,7 @@
           "description": "My Yellow Oil Pastel",
           "color": "#FFFF66",
           "colorName": "Yellow",
+          "colorCode": "Y01",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -270,6 +296,7 @@
           "description": "My Pink Oil Pastel",
           "color": "#FF69B4",
           "colorName": "Pink",
+          "colorCode": "P02",
           "shape": "CIRCLE",
           "status": "OWN"
         },
@@ -279,6 +306,7 @@
           "description": "My Red Oil Pastel",
           "color": "#DC143C",
           "colorName": "Red",
+          "colorCode": "R00",
           "shape": "TRIANGLE",
           "status": "OWN"
         },
@@ -288,6 +316,7 @@
           "description": "My Blue Oil Pastel",
           "color": "#1E90FF",
           "colorName": "Blue",
+          "colorCode": "B004",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -297,6 +326,7 @@
           "description": "Orange Oil Pastel",
           "color": "#FF7F50",
           "colorName": "Orange",
+          "colorCode": "YR58",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -306,6 +336,7 @@
           "description": "My Brown Oil Pastel",
           "color": "#8B4513",
           "colorName": "Brown",
+          "colorCode": "BR400",
           "shape": "ELLIPSE",
           "status": "OWN"
         },
@@ -315,6 +346,7 @@
           "description": "Salmon Oil Pastel",
           "color": "#FA8072",
           "colorName": "Salmon",
+          "colorCode": "VR67",
           "shape": "CIRCLE",
           "status": "DO_NOT_WANT"
         },
@@ -324,6 +356,7 @@
           "description": "My Green Oil Pastel",
           "color": "#7CFC00",
           "colorName": "Green",
+          "colorCode": "GR07",
           "shape": "ELLIPSE",
           "status": "OWN"
         },
@@ -333,6 +366,7 @@
           "description": "My Purple Oil Pastel",
           "color": "#9370DB",
           "colorName": "Purple",
+          "colorCode": "PU2",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -342,6 +376,7 @@
           "description": "My Yellow Oil Pastel",
           "color": "#FFFF66",
           "colorName": "Yellow",
+          "colorCode": "Y01",
           "shape": "CIRCLE",
           "status": "WANT"
         },
@@ -351,6 +386,7 @@
           "description": "My Pink Oil Pastel",
           "color": "#FF69B4",
           "colorName": "Pink",
+          "colorCode": "P02",
           "shape": "CIRCLE",
           "status": "OWN"
         }
@@ -368,6 +404,7 @@
           "description": "My Yellow Gouache Paint",
           "color": "#FFFF66",
           "colorName": "Yellow",
+          "colorCode": "Y01",
           "shape": "SQUARE",
           "status": "OWN"
         },
@@ -377,6 +414,7 @@
           "description": "My Brown Gouache Paint",
           "color": "#8B4513",
           "colorName": "Brown",
+          "colorCode": "BR400",
           "shape": "HEXAGON_DOT",
           "status": "DO_NOT_WANT"
         }

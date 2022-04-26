@@ -25,15 +25,7 @@ const Collection = () => {
       </Row>
       <Row className="items-pane px-2 px-md-4">
         {collection?.items?.map((item, index) => (
-          <Col
-            xs={4}
-            sm={2}
-            xl={1}
-            key={index}
-            className="item px-2 py-3 d-flex justify-content-center align-items-center"
-          >
-            <CollectionItem item={item} />
-          </Col>
+          <CollectionItem key={index} item={item} />
         ))}
       </Row>
     </Container>

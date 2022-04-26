@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Col } from "react-bootstrap";
 import {
   BsCircleFill,
   BsRecordCircle,
@@ -36,17 +37,32 @@ const CollectionItem = (props) => {
     }
 
     return (
-      <TagName
-        size="3em"
-        color={item.color ? item.color : "var(--bs-gray-300)"}
-        style={{
-          paintOrder: "fill",
-          stroke: "var(--outline)",
-          strokeWidth: "0.3",
-          overflow: "visible",
-          transform: `${item.shape === "ELLIPSE" ? "scale(1.4, 0.8)" : "none"}`,
-        }}
-      />
+      <Col
+        xs={4}
+        sm={2}
+        xl={1}
+        className="collection-item-wrapper d-flex justify-content-center align-items-center"
+      >
+        <div className="collection-item d-flex flex-column justify-content-center align-items-center">
+          <div className="color-name mb-2 text-center">{item.colorName}</div>
+          <div className="color">
+            <TagName
+              size="3.5em"
+              color={item.color ? item.color : "var(--bs-gray-300)"}
+              style={{
+                paintOrder: "fill",
+                stroke: "var(--outline)",
+                strokeWidth: "0.4",
+                overflow: "visible",
+                transform: `${
+                  item.shape === "ELLIPSE" ? "scale(1.4, 0.8)" : "none"
+                }`,
+              }}
+            />
+          </div>
+          <div className="color-code">{item.colorCode}</div>
+        </div>
+      </Col>
     );
   };
 
