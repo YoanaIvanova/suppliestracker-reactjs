@@ -23,7 +23,7 @@ const Collection = () => {
           </h1>
         </Col>
       </Row>
-      <Row className="items-pane px-2 px-md-4">
+      <Row className="items-pane g-3 row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-xl-8 row-cols-xxl-10 row-cols-rt-16 px-2 px-md-4">
         {collection?.items?.map((item, index) => (
           <CollectionItem key={index} item={item} />
         ))}

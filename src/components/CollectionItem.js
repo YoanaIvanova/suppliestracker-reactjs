@@ -37,13 +37,8 @@ const CollectionItem = (props) => {
     }
 
     return (
-      <Col
-        xs={4}
-        sm={2}
-        xl={1}
-        className="collection-item-wrapper d-flex justify-content-center align-items-center"
-      >
-        <div className="collection-item d-flex flex-column justify-content-center align-items-center">
+      <Col className="d-flex justify-content-center align-items-center">
+        <div className="collection-item w-100 h-100 d-flex flex-column justify-content-center align-items-center">
           <div className="color-name mb-2 text-center">{item.colorName}</div>
           <div className="color">
             <TagName

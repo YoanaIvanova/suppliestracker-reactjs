@@ -20,6 +20,19 @@ $accordion-icon-active-color: $secondary;
   color: $body-color;
 }
 
+// Other variables
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  fhd: 1920px,
+  rt: 2560px,
+);
+$grid-row-columns: 16;
+
 /** Custom variables **/
 
 // Colors

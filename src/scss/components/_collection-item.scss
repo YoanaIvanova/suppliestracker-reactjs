@@ -1,23 +1,21 @@
-.collection-item-wrapper {
+.collection-item {
+  position: relative;
   border-radius: 1rem;
   padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  outline: rgba($light, 0.7) solid 1px;
 
   &:hover {
     background-color: rgba($light, 0.5);
+    outline: rgba($outline, 0.5) solid 1px;
     cursor: pointer;
   }
 
-  .collection-item {
-    position: relative;
-
-    .color-code {
-      position: absolute;
-      bottom: 1.2rem;
-      font-size: 0.8rem;
-      text-shadow: -0.5px -0.5px 0 rgba($white, 1),
-        0.5px -0.5px 0 rgba($white, 1), -0.5px 0.5px 0 rgba($white, 1),
-        0.5px 0.5px 0 rgba($white, 1);
-    }
+  .color-code {
+    position: absolute;
+    bottom: 2.2rem;
+    font-size: 0.8rem;
+    text-shadow: -0.5px -0.5px 0 rgba($white, 1), 0.5px -0.5px 0 rgba($white, 1),
+      -0.5px 0.5px 0 rgba($white, 1), 0.5px 0.5px 0 rgba($white, 1);
   }
 }

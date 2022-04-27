@@ -14,13 +14,10 @@ const CollectionsList = () => {
           <h1 className="fw-bold mb-0">Overview</h1>
         </Col>
       </Row>
-      <Row className="px-4">
+      <Row className="px-4 row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-rt-6">
         {collectionsContext.collections.map((collection, index) => (
           <Col
             key={index}
-            md={6}
-            lg={6}
-            xl={4}
             className="collection-wrapper d-flex justify-content-center"
           >
             <CollectionCard collection={collection} />
