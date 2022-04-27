@@ -8,7 +8,7 @@
     15px 15px 0px 0px rgba($light, 0.2);
 
   &:hover {
-    border-color: $highlight-outline;
+    border-color: shade-color($secondary, 20%);
     -webkit-box-shadow: 5px 5px 0px 0px rgba($secondary, 0.5),
       10px 10px 0px 0px rgba($secondary, 0.3),
       15px 15px 0px 0px rgba($secondary, 0.15);

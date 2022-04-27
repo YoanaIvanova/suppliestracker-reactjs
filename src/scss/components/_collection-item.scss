@@ -1,21 +1,79 @@
 .collection-item {
   position: relative;
   border-radius: 1rem;
-  padding-top: 2.5rem;
-  padding-bottom: 1rem;
   outline: rgba($light, 0.7) solid 1px;
+
+  // &.want {
+  //   background-color: rgba($secondary, 0.05);
+  //   background-size: 25px 25px;
+  //   background-image: radial-gradient(
+  //     transparent 14px,
+  //     rgba($secondary, 0.3) 14px,
+  //     rgba($secondary, 0.3) 16px,
+  //     transparent 16px
+  //   );
+  // }
+
+  &.do-not-want {
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba($outline, 0.2),
+      rgba($outline, 0.2) 1px,
+      transparent 1px,
+      transparent 6px
+    );
+  }
 
   &:hover {
     background-color: rgba($light, 0.5);
     outline: rgba($outline, 0.5) solid 1px;
     cursor: pointer;
+
+    .icon,
+    .text {
+      color: rgba($outline, 0.5);
+    }
+
+    .icon {
+      &.status {
+        color: shade-color($secondary, 15%);
+      }
+    }
   }
 
   .color-code {
     position: absolute;
-    bottom: 2.2rem;
+    bottom: 3.4rem;
     font-size: 0.8rem;
     text-shadow: -0.5px -0.5px 0 rgba($white, 1), 0.5px -0.5px 0 rgba($white, 1),
       -0.5px 0.5px 0 rgba($white, 1), 0.5px 0.5px 0 rgba($white, 1);
+  }
+
+  .color-name {
+    line-height: 1.2;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+
+  .icon {
+    cursor: pointer;
+    color: $light;
+
+    &:hover {
+      color: rgba($outline, 0.7);
+    }
+
+    &.status {
+      color: shade-color($secondary, 5%);
+
+      &:hover {
+        color: shade-color($secondary, 30%);
+      }
+    }
+  }
+
+  .text {
+    color: $light;
+    font-size: 0.8rem;
   }
 }
