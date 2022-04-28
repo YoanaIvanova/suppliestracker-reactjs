@@ -1,14 +1,20 @@
-import { useState } from "react";
-import { Row, Col, Card, Button } from "react-bootstrap";
+import { useState, useContext } from "react";
+import { Row, Col, Card, Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
+import { BsXCircleFill, BsPencilSquare } from "react-icons/bs";
 
+import { CollectionsContext } from "../providers/CollectionsProvider";
 import CollectionStatusChart from "./CollectionStatusChart";
 
 const CollectionCard = (props) => {
   const [showMore, setShowMore] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+
+  const collectionsContext = useContext(CollectionsContext);
   const truncateLength = 60;
   const shouldTruncate = props.collection.description.length > truncateLength;
+
   const toggleShowMore = () => {
     setShowMore(!showMore);
 
@@ -20,10 +26,19 @@ const CollectionCard = (props) => {
     }
   };
 
+  const handleDeleteModalClose = () => setShowDeleteModal(false);
+  const handleDeleteModalShow = () => setShowDeleteModal(true);
+
   return (
     <Card className="collection-card w-100">
       <Card.Body className="d-flex flex-column">
-        <Card.Title className="mb-1">{props.collection.name}</Card.Title>
+        <Card.Title className="mb-1 d-flex justify-content-between">
+          <div className="title">{props.collection.name}</div>
+          <div className="actions">
+            <BsPencilSquare className="icon me-2" />
+            <BsXCircleFill className="icon" onClick={handleDeleteModalShow} />
+          </div>
+        </Card.Title>
 
         <Card.Subtitle className="mb-3 text-muted">
           {props.collection.items.length} items
@@ -71,6 +86,28 @@ const CollectionCard = (props) => {
           <FaRegEye className="me-1" />
           View details
         </Link>
+
+        <Modal show={showDeleteModal} onHide={handleDeleteModalClose}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            Are you sure you want to delete this collection?
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleDeleteModalClose}>
+              No
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                handleDeleteModalClose();
+                collectionsContext.removeCollectionWithId(props.collection.id);
+              }}
+            >
+              Yes
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Card.Body>
     </Card>
   );

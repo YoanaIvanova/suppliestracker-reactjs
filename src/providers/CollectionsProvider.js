@@ -1,6 +1,10 @@
 import { useState, useEffect, createContext } from "react";
 
-import { initCollections } from "../utils/CollectionsHelper";
+import {
+  initCollections,
+  persistCollections,
+  reinitCollections,
+} from "../utils/CollectionsHelper";
 
 export const CollectionsContext = createContext();
 
@@ -15,11 +19,23 @@ const CollectionsProvider = (props) => {
     return collections.filter((col) => col.id === Number(id))[0];
   };
 
+  const removeCollectionWithId = (id) => {
+    const newCollections = collections.filter((col) => col.id !== id);
+    setCollections(newCollections);
+    persistCollections(newCollections);
+  };
+
+  const resetCollections = () => {
+    reinitCollections(setCollections);
+  };
+
   return (
     <CollectionsContext.Provider
       value={{
         collections,
         getCollectionWithId,
+        removeCollectionWithId,
+        resetCollections,
       }}
     >
       {props.children}

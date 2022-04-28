@@ -2,6 +2,14 @@
  * Custom variables, including Bootstrap overrides
  **/
 
+/** Custom variables **/
+
+// Colors
+$outline: #4b3c8a;
+
+// Other variables
+$sidebar-width: 260px;
+
 /** Bootstrap overrides **/
 
 // Colors
@@ -19,8 +27,10 @@ $accordion-icon-active-color: $secondary;
 .btn-secondary {
   color: $body-color;
 }
+$btn-close-color: $text-muted;
+$btn-close-focus-shadow: none;
 
-// Other variables
+// Grid
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -33,10 +43,8 @@ $grid-breakpoints: (
 );
 $grid-row-columns: 16;
 
-/** Custom variables **/
-
-// Colors
-$outline: #4b3c8a;
-
-// Other variables
-$sidebar-width: 260px;
+//Modal
+$modal-header-border-width: 0;
+$modal-footer-border-width: 0;
+$modal-content-border-radius: 0.7rem;
+$modal-content-border-color: rgba($outline, 0.5);

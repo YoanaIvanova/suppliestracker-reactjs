@@ -28,4 +28,13 @@
       width: fit-content;
     }
   }
+
+  .icon {
+    cursor: pointer;
+    color: $light;
+
+    &:hover {
+      color: rgba($outline, 0.7);
+    }
+  }
 }

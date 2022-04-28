@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 import { CollectionsContext } from "../providers/CollectionsProvider";
 import CollectionCard from "../components/CollectionCard";
@@ -9,9 +9,15 @@ const CollectionsList = () => {
 
   return (
     <Container fluid>
-      <Row className="text-center mt-4 mb-3">
-        <Col>
+      <Row className="mt-4 mb-3 px-4">
+        <Col className="d-flex justify-content-between">
           <h1 className="fw-bold mb-0">Overview</h1>
+          <Button
+            variant="primary"
+            onClick={() => collectionsContext.resetCollections()}
+          >
+            Reset
+          </Button>
         </Col>
       </Row>
       <Row className="px-4 row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-rt-6">
