@@ -1,3 +1,32 @@
+import {
+  BsCircleFill,
+  BsRecordCircle,
+  BsSquareFill,
+  BsTriangleFill,
+  BsHexagonFill,
+  BsNutFill,
+} from "react-icons/bs";
+import {
+  GiAbstract039,
+  GiAbstract069,
+  GiAbstract091,
+  GiAbstract103,
+} from "react-icons/gi";
+
+export const shapeIconMap = new Map([
+  ["CIRCLE", BsCircleFill],
+  ["ELLIPSE", BsCircleFill],
+  ["CIRCLE_DOT", BsRecordCircle],
+  ["SQUARE", BsSquareFill],
+  ["TRIANGLE", BsTriangleFill],
+  ["HEXAGON", BsHexagonFill],
+  ["HEXAGON_DOT", BsNutFill],
+  ["MARKER_CAP_1", GiAbstract091],
+  ["MARKER_CAP_2", GiAbstract069],
+  ["MARKER_CAP_3", GiAbstract103],
+  ["MARKER_CAP_4", GiAbstract039],
+]);
+
 export const initCollections = (setCollections) => {
   const collectionsJson = localStorage.getItem("collections");
 

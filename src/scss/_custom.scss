@@ -43,8 +43,11 @@ $grid-breakpoints: (
 );
 $grid-row-columns: 16;
 
-//Modal
+// Modal
 $modal-header-border-width: 0;
 $modal-footer-border-width: 0;
 $modal-content-border-radius: 0.7rem;
 $modal-content-border-color: rgba($outline, 0.5);
+
+// Other variables
+$dropdown-min-width: 0;

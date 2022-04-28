@@ -113,7 +113,9 @@ const CollectionItem = (props) => {
         </div>
 
         <Modal show={showDeleteModal} onHide={handleDeleteModalClose}>
-          <Modal.Header closeButton></Modal.Header>
+          <Modal.Header closeButton>
+            <Modal.Title>Remove item</Modal.Title>
+          </Modal.Header>
           <Modal.Body>Are you sure you want to delete this item?</Modal.Body>
           <Modal.Footer>
             <Button variant="primary" onClick={handleDeleteModalClose}>

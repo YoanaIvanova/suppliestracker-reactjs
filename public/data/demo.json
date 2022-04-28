@@ -3,8 +3,9 @@
     {
       "id": 1,
       "name": "Acrylic Markers",
-      "description": "Acrylic Marker Colleciton",
+      "description": "Acrylic Marker Collection",
       "defaultItemShape": "CIRCLE",
+      "defaultBrand": "Acrylic Marker Brand",
       "items": [
         {
           "id": 1,
@@ -13,7 +14,6 @@
           "color": "#DC143C",
           "colorName": "Red",
           "colorCode": "R00",
-          "shape": "HEXAGON_DOT",
           "status": "OWN",
           "qty": 1
         },
@@ -24,7 +24,6 @@
           "color": "#FFFF66",
           "colorName": "Yellow",
           "colorCode": "Y01",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -34,7 +33,6 @@
           "color": "#1E90FF",
           "colorName": "Blue",
           "colorCode": "B004",
-          "shape": "CIRCLE",
           "status": "DO_NOT_WANT"
         }
       ]
@@ -42,8 +40,9 @@
     {
       "id": 2,
       "name": "Alcohol Markers",
-      "description": "Alcohol Marker Colleciton",
+      "description": "Alcohol Marker Collection",
       "defaultItemShape": "MARKER_CAP_1",
+      "defaultBrand": "Alcohol Marker Brand",
       "items": [
         {
           "id": 1,
@@ -92,8 +91,9 @@
     {
       "id": 3,
       "name": "Watercolor Pencils",
-      "description": "Watercolor Pencils Colleciton",
-      "defaultItemShape": "CIRCLE",
+      "description": "Watercolor Pencils Collection",
+      "defaultItemShape": "CIRCLE_DOT",
+      "defaultBrand": "Watercolor Pencils Brand",
       "items": [
         {
           "id": 1,
@@ -102,7 +102,6 @@
           "color": "#FF69B4",
           "colorName": "Pink",
           "colorCode": "P02",
-          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         },
@@ -113,7 +112,7 @@
           "color": "#8B4513",
           "colorName": "Brown",
           "colorCode": "BR400",
-          "shape": "CIRCLE_DOT",
+          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         }
@@ -123,7 +122,8 @@
       "id": 4,
       "name": "Oil Pastels",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper tincidunt diam, eu scelerisque arcu suscipit sed. Aliquam consectetur, ante eget lacinia euismod, ipsum mauris pretium tortor, a euismod nulla nulla sit amet felis.",
-      "defaultItemShape": "CIRCLE",
+      "defaultItemShape": "SQUARE",
+      "defaultBrand": "Oil Pastels Brand",
       "items": [
         {
           "id": 1,
@@ -132,7 +132,6 @@
           "color": "#DC143C",
           "colorName": "Red",
           "colorCode": "R00",
-          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         },
@@ -163,7 +162,6 @@
           "color": "#FFEBCD",
           "colorName": "Blanched almond",
           "colorCode": "BR000",
-          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         },
@@ -174,7 +172,6 @@
           "color": "#E30022",
           "colorName": "Cadmium Red",
           "colorCode": "VR67",
-          "shape": "CIRCLE",
           "status": "DO_NOT_WANT"
         },
         {
@@ -184,7 +181,6 @@
           "color": "#7CFC00",
           "colorName": "Green",
           "colorCode": "GR07",
-          "shape": "SQUARE",
           "status": "OWN",
           "qty": 4
         },
@@ -195,7 +191,7 @@
           "color": "#9370DB",
           "colorName": "Purple",
           "colorCode": "PU2",
-          "shape": "SQUARE",
+          "shape": "HEXAGON",
           "status": "OWN",
           "qty": 1
         },
@@ -206,7 +202,6 @@
           "color": "#ADF022",
           "colorName": "Fluorescent Yellow Green",
           "colorCode": "Y01",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -216,7 +211,6 @@
           "color": "#FF69B4",
           "colorName": "Pink",
           "colorCode": "P02",
-          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         },
@@ -238,7 +232,6 @@
           "color": "#1E90FF",
           "colorName": "Blue",
           "colorCode": "B004",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -248,7 +241,6 @@
           "color": "#FF7F50",
           "colorName": "Orange",
           "colorCode": "YR58",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -258,7 +250,6 @@
           "color": "#8B4513",
           "colorName": "Brown",
           "colorCode": "BR400",
-          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         },
@@ -279,7 +270,6 @@
           "color": "#7CFC00",
           "colorName": "Green",
           "colorCode": "GR07",
-          "shape": "SQUARE",
           "status": "OWN",
           "qty": 1
         },
@@ -290,7 +280,6 @@
           "color": "#013220",
           "colorName": "Dark green",
           "colorCode": "PU2",
-          "shape": "SQUARE",
           "status": "OWN",
           "qty": 1
         },
@@ -301,7 +290,6 @@
           "color": "#FFFF66",
           "colorName": "Yellow",
           "colorCode": "Y01",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -311,7 +299,6 @@
           "color": "#FF69B4",
           "colorName": "Pink",
           "colorCode": "P02",
-          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         },
@@ -333,7 +320,6 @@
           "color": "#1E90FF",
           "colorName": "Blue",
           "colorCode": "B004",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -343,7 +329,6 @@
           "color": "#8F00FF",
           "colorName": "Electric violet",
           "colorCode": "EV02",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -364,7 +349,6 @@
           "color": "#FA8072",
           "colorName": "Salmon",
           "colorCode": "VR67",
-          "shape": "CIRCLE",
           "status": "DO_NOT_WANT"
         },
         {
@@ -374,7 +358,7 @@
           "color": "#7CFC00",
           "colorName": "Green",
           "colorCode": "GR07",
-          "shape": "ELLIPSE",
+          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         },
@@ -385,7 +369,6 @@
           "color": "#9370DB",
           "colorName": "Purple",
           "colorCode": "PU2",
-          "shape": "SQUARE",
           "status": "OWN",
           "qty": 1
         },
@@ -396,7 +379,6 @@
           "color": "#ADF022",
           "colorName": "FluorescentYellowGreen255",
           "colorCode": "FYG938",
-          "shape": "CIRCLE",
           "status": "WANT"
         },
         {
@@ -406,7 +388,6 @@
           "color": "#FF69B4",
           "colorName": "Pink",
           "colorCode": "P02",
-          "shape": "CIRCLE",
           "status": "OWN",
           "qty": 1
         }
@@ -415,8 +396,9 @@
     {
       "id": 5,
       "name": "Gouache Paint",
-      "description": "Gouache Paint Colleciton",
-      "defaultItemShape": "SQUARE",
+      "description": "Gouache Paint Collection",
+      "defaultItemShape": "TRIANGLE",
+      "defaultBrand": "Gouache Paint Brand",
       "items": [
         {
           "id": 1,
@@ -425,7 +407,6 @@
           "color": "#FFFF66",
           "colorName": "Yellow",
           "colorCode": "Y01",
-          "shape": "SQUARE",
           "status": "OWN",
           "qty": 1
         },
@@ -436,7 +417,6 @@
           "color": "#8B4513",
           "colorName": "Brown",
           "colorCode": "BR400",
-          "shape": "HEXAGON_DOT",
           "status": "DO_NOT_WANT"
         }
       ]
