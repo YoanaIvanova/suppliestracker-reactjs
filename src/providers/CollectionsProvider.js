@@ -16,13 +16,34 @@ const CollectionsProvider = (props) => {
   }, []);
 
   const getCollectionWithId = (id) => {
-    return collections.filter((col) => col.id === Number(id))[0];
+    return collections.find((col) => col.id === Number(id));
   };
 
   const removeCollectionWithId = (id) => {
-    const newCollections = collections.filter((col) => col.id !== id);
+    const newCollections = collections.filter((col) => col.id !== Number(id));
     setCollections(newCollections);
     persistCollections(newCollections);
+  };
+
+  const removeItemWithIdFromCollectionWithId = (itemId, collectionId) => {
+    let collectionIndex = collections.findIndex(
+      (col) => col.id === Number(collectionId)
+    );
+    let newCollection = collections.find(
+      (col) => col.id === Number(collectionId)
+    );
+    let newCollections = [...collections];
+
+    if (newCollection) {
+      newCollection.items = newCollection.items.filter(
+        (item) => item.id !== Number(itemId)
+      );
+
+      newCollections[collectionIndex] = newCollection;
+
+      setCollections(newCollections);
+      persistCollections(newCollections);
+    }
   };
 
   const resetCollections = () => {
@@ -35,6 +56,7 @@ const CollectionsProvider = (props) => {
         collections,
         getCollectionWithId,
         removeCollectionWithId,
+        removeItemWithIdFromCollectionWithId,
         resetCollections,
       }}
     >

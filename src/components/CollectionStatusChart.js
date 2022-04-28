@@ -21,12 +21,8 @@ const CollectionStatusChart = (props) => {
   ChartJS.register(ArcElement, Tooltip);
 
   useEffect(() => {
-    const own = props.items.filter(
-      (item) => item.status === "OWN"
-    ).length;
-    const want = props.items.filter(
-      (item) => item.status === "WANT"
-    ).length;
+    const own = props.items.filter((item) => item.status === "OWN").length;
+    const want = props.items.filter((item) => item.status === "WANT").length;
     const doNotWant = props.items.filter(
       (item) => item.status === "DO_NOT_WANT"
     ).length;

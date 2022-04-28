@@ -43,7 +43,7 @@
       "id": 2,
       "name": "Alcohol Markers",
       "description": "Alcohol Marker Colleciton",
-      "defaultItemShape": "SQUARE",
+      "defaultItemShape": "MARKER_CAP_1",
       "items": [
         {
           "id": 1,
@@ -52,7 +52,7 @@
           "color": "#7CFC00",
           "colorName": "Green",
           "colorCode": "GR07",
-          "shape": "SQUARE",
+          "shape": "MARKER_CAP_2",
           "status": "OWN",
           "qty": 1
         },
@@ -63,7 +63,7 @@
           "color": "#9370DB",
           "colorName": "Purple",
           "colorCode": "PU2",
-          "shape": "SQUARE",
+          "shape": "MARKER_CAP_3",
           "status": "OWN",
           "qty": 1
         },
@@ -74,7 +74,7 @@
           "color": "#FF7F50",
           "colorName": "Orange",
           "colorCode": "YR58",
-          "shape": "CIRCLE",
+          "shape": "MARKER_CAP_4",
           "status": "WANT"
         },
         {
@@ -84,7 +84,6 @@
           "color": "#FA8072",
           "colorName": "Salmon",
           "colorCode": "VR67",
-          "shape": "HEXAGON_DOT",
           "status": "OWN",
           "qty": 1
         }

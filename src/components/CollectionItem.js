@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Col } from "react-bootstrap";
+import { useState, useContext } from "react";
+import { Col, Modal, Button } from "react-bootstrap";
 import {
   BsCircleFill,
   BsRecordCircle,
@@ -13,9 +13,18 @@ import {
   BsEmojiAngry,
   BsHandThumbsUp,
 } from "react-icons/bs";
+import {
+  GiAbstract039,
+  GiAbstract069,
+  GiAbstract091,
+  GiAbstract103,
+} from "react-icons/gi";
+
+import { CollectionsContext } from "../providers/CollectionsProvider";
 
 const CollectionItem = (props) => {
-  const [item, setItem] = useState(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const collectionsContext = useContext(CollectionsContext);
   const shapeIconMap = new Map([
     ["CIRCLE", BsCircleFill],
     ["ELLIPSE", BsCircleFill],
@@ -24,23 +33,30 @@ const CollectionItem = (props) => {
     ["TRIANGLE", BsTriangleFill],
     ["HEXAGON", BsHexagonFill],
     ["HEXAGON_DOT", BsNutFill],
+    ["MARKER_CAP_1", GiAbstract091],
+    ["MARKER_CAP_2", GiAbstract069],
+    ["MARKER_CAP_3", GiAbstract103],
+    ["MARKER_CAP_4", GiAbstract039],
   ]);
 
-  useEffect(() => {
-    setItem(props.item);
-  }, [props.item]);
+  const handleDeleteModalClose = () => setShowDeleteModal(false);
+  const handleDeleteModalShow = () => setShowDeleteModal(true);
 
   const getComponent = () => {
-    if (!item) {
+    if (!props.item) {
       return <></>;
     }
 
-    let TagName = shapeIconMap.get(item.shape);
+    let TagName = shapeIconMap.get(props.item.shape);
     if (!TagName) {
-      TagName = shapeIconMap.get("CIRCLE");
+      if (props.defaultItemShape) {
+        TagName = shapeIconMap.get(props.defaultItemShape);
+      } else {
+        TagName = shapeIconMap.get("CIRCLE");
+      }
     }
 
-    const itemClass = item.status.toLowerCase().replaceAll("_", "-");
+    const itemClass = props.item.status.toLowerCase().replaceAll("_", "-");
 
     return (
       <Col className="d-flex justify-content-center align-items-center">
@@ -52,45 +68,72 @@ const CollectionItem = (props) => {
               <BsPencilSquare className="icon" />
             </div>
             <div className="end">
-              <BsXCircleFill className="icon" />
+              <BsXCircleFill className="icon" onClick={handleDeleteModalShow} />
             </div>
           </div>
 
           <div className="color-name mt-auto mb-2 text-center">
-            {item.colorName}
+            {props.item.colorName}
           </div>
           <div className="color mt-auto">
             <TagName
               size="3.5em"
-              color={item.color ? item.color : "var(--bs-gray-300)"}
+              color={props.item.color ? props.item.color : "var(--bs-gray-300)"}
               style={{
                 paintOrder: "fill",
                 stroke: "var(--outline)",
                 strokeWidth: "0.4",
                 overflow: "visible",
                 transform: `${
-                  item.shape === "ELLIPSE" ? "scale(1.4, 0.8)" : "none"
+                  props.item.shape === "ELLIPSE" ? "scale(1.4, 0.8)" : "none"
                 }`,
               }}
             />
           </div>
-          <div className="color-code">{item.colorCode}</div>
+          <div className="color-code">{props.item.colorCode}</div>
 
           <div className="footer mt-1 w-100 align-self-start d-flex justify-content-between">
             <div className="start">
-              {item.status === "OWN" && (
+              {props.item.status === "OWN" && (
                 <BsHandThumbsUp className="icon status" />
               )}
-              {item.status === "WANT" && <BsStars className="icon status" />}
-              {item.status === "DO_NOT_WANT" && (
+              {props.item.status === "WANT" && (
+                <BsStars className="icon status" />
+              )}
+              {props.item.status === "DO_NOT_WANT" && (
                 <BsEmojiAngry className="icon status" />
               )}
             </div>
             <div className="end">
-              {item.qty > 0 && <span className="text">x{item.qty}</span>}
+              {props.item.qty > 0 && (
+                <span className="text">x{props.item.qty}</span>
+              )}
             </div>
           </div>
         </div>
+
+        <Modal show={showDeleteModal} onHide={handleDeleteModalClose}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>Are you sure you want to delete this item?</Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleDeleteModalClose}>
+              No
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={(e) => {
+                e.preventDefault();
+                handleDeleteModalClose();
+                collectionsContext.removeItemWithIdFromCollectionWithId(
+                  props.item.id,
+                  props.collectionId
+                );
+              }}
+            >
+              Yes
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Col>
     );
   };
