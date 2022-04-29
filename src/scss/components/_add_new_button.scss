@@ -20,7 +20,7 @@
       color: shade-color($success, 20%);
     }
 
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(md) {
       .add-new-text {
         width: auto;
         max-width: 200px;

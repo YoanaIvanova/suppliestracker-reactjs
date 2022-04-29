@@ -20,7 +20,7 @@ const CollectionsList = () => {
           xs={2}
           className="d-flex justify-content-center justify-content-md-start align-items-center"
         >
-          <AddNewButton action={handleAddModalShow} />
+          <AddNewButton text="Add new collection" action={handleAddModalShow} />
         </Col>
         <Col xs={8} className="text-center mt-2 mt-md-0">
           <h1 className="fw-bold mb-0">Overview</h1>

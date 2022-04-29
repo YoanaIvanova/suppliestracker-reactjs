@@ -48,6 +48,46 @@ const CollectionsProvider = (props) => {
     persistCollections(newCollections);
   };
 
+  const addEditItemToCollectionWithId = (item, collectionId) => {
+    let collectionIndex = collections.findIndex(
+      (col) => col.id === Number(collectionId)
+    );
+    let newCollection = collections.find(
+      (col) => col.id === Number(collectionId)
+    );
+    let newCollections = [...collections];
+
+    if (newCollection) {
+      if (item.id) {
+        const itemIndex = newCollection.items.findIndex(
+          (i) => i.id === item.id
+        );
+        let newItem = newCollection.items.find((i) => i.id === item.id);
+
+        newItem.name = item.name;
+        newItem.description = item.description;
+        newItem.shape = item.shape;
+        newItem.status = item.status;
+        newItem.qty = item.qty;
+        newItem.brand = item.brand;
+        newItem.color = item.color;
+        newItem.colorName = item.colorName;
+        newItem.colorCode = item.colorCode;
+
+        newCollection[itemIndex] = newItem;
+      } else {
+        item.id = newCollection.items?.at(-1).id + 1;
+
+        newCollection.items.push(item);
+      }
+
+      newCollections[collectionIndex] = newCollection;
+
+      setCollections(newCollections);
+      persistCollections(newCollections);
+    }
+  };
+
   const removeCollectionWithId = (id) => {
     const newCollections = collections.filter((col) => col.id !== Number(id));
     setCollections(newCollections);
@@ -86,6 +126,7 @@ const CollectionsProvider = (props) => {
         getCollectionWithId,
         addEditCollection,
         removeCollectionWithId,
+        addEditItemToCollectionWithId,
         removeItemWithIdFromCollectionWithId,
         resetCollections,
       }}

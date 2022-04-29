@@ -9,14 +9,19 @@ import {
 } from "react-icons/bs";
 
 import { CollectionsContext } from "../providers/CollectionsProvider";
+import ItemForm from "./ItemForm";
 import Shape from "./Shape";
 
 const CollectionItem = (props) => {
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const collectionsContext = useContext(CollectionsContext);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
 
   const handleDeleteModalClose = () => setShowDeleteModal(false);
   const handleDeleteModalShow = () => setShowDeleteModal(true);
+
+  const handleEditModalClose = () => setShowEditModal(false);
+  const handleEditModalShow = () => setShowEditModal(true);
 
   const getComponent = () => {
     if (!props.item) {
@@ -29,13 +34,26 @@ const CollectionItem = (props) => {
       <Col className="d-flex justify-content-center align-items-center">
         <div
           className={`collection-item ${itemClass} w-100 h-100 p-2 d-flex flex-column justify-content-center align-items-center`}
+          onClick={handleEditModalShow}
         >
           <div className="header mb-1 w-100 align-self-start d-flex justify-content-between">
             <div className="start">
-              <BsPencilSquare className="icon" />
+              <BsPencilSquare
+                className="icon"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEditModalShow();
+                }}
+              />
             </div>
             <div className="end">
-              <BsXCircleFill className="icon" onClick={handleDeleteModalShow} />
+              <BsXCircleFill
+                className="icon"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDeleteModalShow();
+                }}
+              />
             </div>
           </div>
 
@@ -94,6 +112,32 @@ const CollectionItem = (props) => {
               }}
             >
               Yes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+        <Modal show={showEditModal} onHide={handleEditModalClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Edit item</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ItemForm
+              item={props.item}
+              collectionId={props.collectionId}
+              defaultItemShape={props.defaultItemShape}
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleEditModalClose}>
+              Cancel
+            </Button>
+            <Button
+              variant="secondary"
+              type="submit"
+              form="item-form"
+              onClick={() => handleEditModalClose()}
+            >
+              Save
             </Button>
           </Modal.Footer>
         </Modal>

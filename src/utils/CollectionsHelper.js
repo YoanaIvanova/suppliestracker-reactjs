@@ -27,6 +27,12 @@ export const shapeIconMap = new Map([
   ["MARKER_CAP_4", GiAbstract039],
 ]);
 
+export const itemStatusMap = new Map([
+  ["OWN", "Own"],
+  ["WANT", "Want"],
+  ["DO_NOT_WANT", "Do Not Want"],
+]);
+
 export const initCollections = (setCollections) => {
   const collectionsJson = localStorage.getItem("collections");
 
