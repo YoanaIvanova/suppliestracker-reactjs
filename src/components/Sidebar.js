@@ -102,7 +102,7 @@ const Sidebar = () => {
                       className="d-flex justify-content-between"
                     >
                       <span>{collection.name}</span>
-                      <span>{collection.items.length}</span>
+                      <span>{collection.items?.length}</span>
                     </Nav.Link>
                   </Nav>
                 ))}

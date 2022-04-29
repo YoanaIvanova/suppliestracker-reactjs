@@ -39,6 +39,8 @@ const CollectionsProvider = (props) => {
         newCollections[collectionIndex] = newCollection;
       }
     } else {
+      collection.id = newCollections.at(-1).id + 1;
+      collection.items = [];
       newCollections.push(collection);
     }
 

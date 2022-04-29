@@ -1,0 +1,35 @@
+.add-new-wrapper {
+  cursor: pointer;
+
+  .add-new-icon {
+    color: $success;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .add-new-text {
+    color: $success;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.2s ease-in-out;
+  }
+
+  &:hover {
+    .add-new-text,
+    .add-new-icon {
+      color: shade-color($success, 20%);
+    }
+
+    @include media-breakpoint-up(sm) {
+      .add-new-text {
+        width: auto;
+        max-width: 200px;
+      }
+
+      .add-new-icon {
+        color: shade-color($success, 20%);
+        transform: scale(1.1);
+      }
+    }
+  }
+}

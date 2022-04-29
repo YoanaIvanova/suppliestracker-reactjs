@@ -4,7 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 
 const CollectionStatusChart = (props) => {
   const [chartData, setChartData] = useState({ datasets: [] });
-  const options = {
+  const [options, setOptions] = useState({
     responsive: true,
     plugins: {
       legend: {
@@ -16,37 +16,61 @@ const CollectionStatusChart = (props) => {
         },
       },
     },
-  };
+  });
 
   ChartJS.register(ArcElement, Tooltip);
 
   useEffect(() => {
-    const own = props.items.filter((item) => item.status === "OWN").length;
-    const want = props.items.filter((item) => item.status === "WANT").length;
-    const doNotWant = props.items.filter(
-      (item) => item.status === "DO_NOT_WANT"
-    ).length;
+    if (props.items && props.items.length > 0) {
+      const own = props.items.filter((item) => item.status === "OWN").length;
+      const want = props.items.filter((item) => item.status === "WANT").length;
+      const doNotWant = props.items.filter(
+        (item) => item.status === "DO_NOT_WANT"
+      ).length;
 
-    setChartData({
-      labels: ["Own", "Want", "Do Not Want"],
-      datasets: [
-        {
-          label: "Items",
-          data: [own, want, doNotWant],
-          backgroundColor: [
-            "rgba(69, 204, 105, 1)",
-            "rgba(214, 66, 49, 1)",
-            "rgba(49, 120, 214, 1)",
-          ],
-          borderColor: [
-            "rgba(255, 255, 255, 1)",
-            "rgba(255, 255, 255, 1)",
-            "rgba(255, 255, 255, 1)",
-          ],
-          borderWidth: 1,
+      setChartData({
+        labels: ["Own", "Want", "Do Not Want"],
+        datasets: [
+          {
+            label: "Items",
+            data: [own, want, doNotWant],
+            backgroundColor: [
+              "rgba(69, 204, 105, 1)",
+              "rgba(214, 66, 49, 1)",
+              "rgba(49, 120, 214, 1)",
+            ],
+            borderColor: [
+              "rgba(255, 255, 255, 1)",
+              "rgba(255, 255, 255, 1)",
+              "rgba(255, 255, 255, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      });
+    } else {
+      setChartData({
+        datasets: [
+          {
+            data: [1],
+            backgroundColor: ["rgba(210, 210, 210, 1)"],
+            borderColor: ["rgba(255, 255, 255, 1)"],
+            borderWidth: 1,
+          },
+        ],
+      });
+
+      setOptions({
+        responsive: true,
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: () => "No items",
+            },
+          },
         },
-      ],
-    });
+      });
+    }
   }, [props.items]);
 
   return (

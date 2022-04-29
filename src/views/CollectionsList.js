@@ -1,17 +1,34 @@
-import { useContext } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { useState, useContext } from "react";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 
 import { CollectionsContext } from "../providers/CollectionsProvider";
 import CollectionCard from "../components/CollectionCard";
+import AddNewButton from "../components/AddNewButton";
+import CollectionForm from "../components/CollectionForm";
 
 const CollectionsList = () => {
+  const [showAddModal, setShowAddModal] = useState(false);
   const collectionsContext = useContext(CollectionsContext);
+
+  const handleAddModalClose = () => setShowAddModal(false);
+  const handleAddModalShow = () => setShowAddModal(true);
 
   return (
     <Container fluid>
-      <Row className="mt-4 mb-3 px-4">
-        <Col className="d-flex justify-content-between">
+      <Row className="mt-4 mb-3 px-4 justify-conent-center align-items-center">
+        <Col
+          xs={2}
+          className="d-flex justify-content-center justify-content-md-start align-items-center"
+        >
+          <AddNewButton action={handleAddModalShow} />
+        </Col>
+        <Col xs={8} className="text-center mt-2 mt-md-0">
           <h1 className="fw-bold mb-0">Overview</h1>
+        </Col>
+        <Col
+          xs={2}
+          className="d-flex mt-2 mt-md-0 justify-content-center justify-content-md-end"
+        >
           <Button
             variant="primary"
             onClick={() => collectionsContext.resetCollections()}
@@ -30,6 +47,28 @@ const CollectionsList = () => {
           </Col>
         ))}
       </Row>
+
+      <Modal show={showAddModal} onHide={handleAddModalClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add collection</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <CollectionForm />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleAddModalClose}>
+            Cancel
+          </Button>
+          <Button
+            variant="secondary"
+            type="submit"
+            form="collection-form"
+            onClick={() => handleAddModalClose()}
+          >
+            Save
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };

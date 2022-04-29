@@ -92,6 +92,7 @@ const CollectionForm = (props) => {
           as="textarea"
           rows={3}
           defaultValue={description}
+          placeholder="Description"
           onChange={(e) => setDescription(e.target.value)}
         />
       </Form.Group>

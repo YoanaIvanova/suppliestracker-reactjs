@@ -49,7 +49,7 @@ const CollectionCard = (props) => {
         </Card.Title>
 
         <Card.Subtitle className="mb-3 text-muted">
-          {props.collection.items.length} items
+          {props.collection.items?.length} items
         </Card.Subtitle>
 
         <Row className="mb-3 justify-content-center align-items-center">
