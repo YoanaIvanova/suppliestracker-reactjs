@@ -1,4 +1,4 @@
-import { BsPlusCircle } from "react-icons/bs";
+import { BsPlusCircleFill } from "react-icons/bs";
 
 const AddNewButton = (props) => {
   return (
@@ -6,7 +6,16 @@ const AddNewButton = (props) => {
       className="add-new-wrapper d-flex justify-content-center align-items-center"
       onClick={props.action}
     >
-      <BsPlusCircle size="2.5em" className="add-new-icon me-2" />
+      <BsPlusCircleFill
+        size="2.5em"
+        className="add-new-icon me-2"
+        style={{
+          paintOrder: "fill",
+          stroke: "var(--bs-primary)",
+          strokeWidth: "0.4",
+          overflow: "visible",
+        }}
+      />
       <div className="add-new-text fw-bold">
         {props.text ? props.text : "Add new"}
       </div>

@@ -2,12 +2,12 @@
   cursor: pointer;
 
   .add-new-icon {
-    color: $success;
+    color: $secondary;
     transition: all 0.1s ease-in-out;
   }
 
   .add-new-text {
-    color: $success;
+    color: $primary;
     max-width: 0;
     overflow: hidden;
     white-space: nowrap;
@@ -15,9 +15,12 @@
   }
 
   &:hover {
-    .add-new-text,
+    .add-new-text {
+      color: tint-color($primary, 20%);
+    }
+
     .add-new-icon {
-      color: shade-color($success, 20%);
+      color: tint-color($secondary, 20%);
     }
 
     @include media-breakpoint-up(md) {
@@ -27,7 +30,7 @@
       }
 
       .add-new-icon {
-        color: shade-color($success, 20%);
+        color: tint-color($secondary, 20%);
         transform: scale(1.1);
       }
     }
