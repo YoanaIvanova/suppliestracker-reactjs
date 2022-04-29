@@ -3,6 +3,7 @@ import { Form, Dropdown } from "react-bootstrap";
 
 import { shapeIconMap } from "../utils/CollectionsHelper";
 import { CollectionsContext } from "../providers/CollectionsProvider";
+import Shape from "./Shape";
 
 const CollectionForm = (props) => {
   const [name, setName] = useState(props.collection?.name);
@@ -18,32 +19,12 @@ const CollectionForm = (props) => {
 
   const shapeOptions = [];
   [...shapeIconMap.keys()].forEach((key, index) => {
-    let TagName = shapeIconMap.get(key);
     shapeOptions.push(
       <Dropdown.Item key={index} eventKey={key}>
-        <TagName
-          size="1.5em"
-          color="var(--bs-primary)"
-          style={{
-            transform: `${key === "ELLIPSE" ? "scale(1.4, 0.8)" : "none"}`,
-          }}
-        />
+        <Shape shape={key} size="1.5em" color="var(--bs-primary)" />
       </Dropdown.Item>
     );
   });
-
-  const getShapeItemComponent = (key) => {
-    let TagName = shapeIconMap.get(key);
-    return (
-      <TagName
-        size="1.5em"
-        color="var(--bs-primary)"
-        style={{
-          transform: `${key === "ELLIPSE" ? "scale(1.4, 0.8)" : "none"}`,
-        }}
-      />
-    );
-  };
 
   const handleSubmitCollectionForm = () => {
     const collection = {
@@ -77,7 +58,11 @@ const CollectionForm = (props) => {
           }}
         >
           <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-            {getShapeItemComponent(defaultItemShape)}
+            <Shape
+              shape={defaultItemShape}
+              size="1.5em"
+              color="var(--bs-primary)"
+            />
           </Dropdown.Toggle>
 
           <Dropdown.Menu>{shapeOptions}</Dropdown.Menu>
