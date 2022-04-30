@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Form, Dropdown } from "react-bootstrap";
+import { Form, Dropdown, Row, Col } from "react-bootstrap";
 
 import { shapeIconMap, itemStatusMap } from "../utils/CollectionsHelper";
 import { CollectionsContext } from "../providers/CollectionsProvider";
@@ -20,7 +20,9 @@ const ItemForm = (props) => {
   );
   const [colorName, setColorName] = useState(props.item?.colorName);
   const [colorCode, setColorCode] = useState(props.item?.colorCode);
-  const [qty, setQty] = useState(props.item?.qty ? props.item.qty : 1);
+  const [qty, setQty] = useState(
+    props.item ? (props.item.qty ? props.item.qty : 0) : 1
+  );
 
   const collectionsContext = useContext(CollectionsContext);
 
@@ -90,55 +92,37 @@ const ItemForm = (props) => {
         </Dropdown>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="itemForm.brand">
-        <Form.Label>Brand</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Brand"
-          defaultValue={brand}
-          onChange={(e) => setBrand(e.target.value)}
-        />
-      </Form.Group>
+      <Row className="mb-3">
+        <Form.Group as={Col} xs="3" sm={2} controlId="itemForm.color">
+          <Form.Label>Color</Form.Label>
+          <Form.Control
+            type="color"
+            defaultValue={color}
+            title="Choose item color"
+            onChange={(e) => setColor(e.target.value)}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="itemForm.name">
-        <Form.Label>Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Name"
-          defaultValue={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </Form.Group>
+        <Form.Group as={Col} xs="4" controlId="itemForm.colorCode">
+          <Form.Label>Color Code</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Color Code"
+            defaultValue={colorCode}
+            onChange={(e) => setColorCode(e.target.value)}
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="itemForm.colorName">
-        <Form.Label>Color Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Color Name"
-          defaultValue={colorName}
-          onChange={(e) => setColorName(e.target.value)}
-        />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="itemForm.colorCode">
-        <Form.Label>Color</Form.Label>
-        <Form.Control
-          type="color"
-          defaultValue={color}
-          title="Choose item color"
-          onChange={(e) => setColor(e.target.value)}
-        />
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="itemForm.colorCode">
-        <Form.Label>Color Code</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Color Code"
-          defaultValue={colorCode}
-          onChange={(e) => setColorCode(e.target.value)}
-        />
-      </Form.Group>
+        <Form.Group as={Col} xs="5" sm="6" controlId="itemForm.colorName">
+          <Form.Label>Color Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Color Name"
+            defaultValue={colorName}
+            onChange={(e) => setColorName(e.target.value)}
+          />
+        </Form.Group>
+      </Row>
 
       <Form.Group
         className="mb-3 d-flex align-items-center"
@@ -167,6 +151,26 @@ const ItemForm = (props) => {
           step="1"
           defaultValue={qty}
           onChange={(e) => setQty(e.target.value)}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="itemForm.brand">
+        <Form.Label>Brand</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Brand"
+          defaultValue={brand}
+          onChange={(e) => setBrand(e.target.value)}
+        />
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="itemForm.name">
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Name"
+          defaultValue={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </Form.Group>
 

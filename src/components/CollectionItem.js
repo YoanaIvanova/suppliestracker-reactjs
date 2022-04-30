@@ -16,12 +16,16 @@ const CollectionItem = (props) => {
   const collectionsContext = useContext(CollectionsContext);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
+  const [showInfoModal, setShowInfoModal] = useState(false);
 
   const handleDeleteModalClose = () => setShowDeleteModal(false);
   const handleDeleteModalShow = () => setShowDeleteModal(true);
 
   const handleEditModalClose = () => setShowEditModal(false);
   const handleEditModalShow = () => setShowEditModal(true);
+
+  const handleInfoModalClose = () => setShowInfoModal(false);
+  const handleInfoModalShow = () => setShowInfoModal(true);
 
   const getComponent = () => {
     if (!props.item) {
@@ -34,7 +38,7 @@ const CollectionItem = (props) => {
       <Col className="d-flex justify-content-center align-items-center">
         <div
           className={`collection-item ${itemClass} w-100 h-100 p-2 d-flex flex-column justify-content-center align-items-center`}
-          onClick={handleEditModalShow}
+          onClick={handleInfoModalShow}
         >
           <div className="header mb-1 w-100 align-self-start d-flex justify-content-between">
             <div className="start">
@@ -138,6 +142,100 @@ const CollectionItem = (props) => {
               onClick={() => handleEditModalClose()}
             >
               Save
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+        <Modal show={showInfoModal} onHide={handleInfoModalClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Item details</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="d-flex align-items-center">
+              <div className="fw-bold me-2">Item name: </div>
+              <div>{props.item?.name}</div>
+            </div>
+
+            <div className="d-flex align-items-center">
+              <div className="fw-bold me-2">Item description: </div>
+              <div>{props.item?.description}</div>
+            </div>
+
+            {props.item?.brand && (
+              <div className="d-flex align-items-center">
+                <div className="fw-bold me-2">Item brand: </div>
+                <div>{props.item?.brand}</div>
+              </div>
+            )}
+
+            <br />
+
+            {props.item?.qty > 0 && (
+              <div className="d-flex align-items-center">
+                <div className="fw-bold me-2">Quantity: </div>
+                <div>{props.item?.qty}</div>
+              </div>
+            )}
+
+            <div className="d-flex align-items-center">
+              <div className="fw-bold me-2">Shape: </div>
+              <div>
+                <Shape
+                  shape={
+                    props.item?.shape
+                      ? props.item?.shape
+                      : props.defaultItemShape
+                  }
+                  size="1em"
+                  color="var(--bs-primary)"
+                />
+              </div>
+              {props.defaultItemShape && !props.item?.shape && (
+                <div className="ms-1">(collection default)</div>
+              )}
+            </div>
+
+            <br />
+
+            <div className="d-flex align-items-center">
+              <div className="fw-bold me-2">Color: </div>
+              <div
+                className="item-color me-1"
+                style={{
+                  width: "1rem",
+                  height: "1rem",
+                  borderRadius: "0.5rem",
+                  backgroundColor: props.item?.color,
+                }}
+              ></div>
+              <div>{props.item?.color}</div>
+            </div>
+
+            <div className="d-flex align-items-center">
+              <div className="fw-bold me-2">Color name: </div>
+              <div>{props.item?.colorName}</div>
+            </div>
+
+            <div className="d-flex align-items-center">
+              <div className="fw-bold me-2">Color code: </div>
+              <div>{props.item?.colorCode}</div>
+            </div>
+
+            <br />
+
+            <div className="d-flex align-items-center">
+              <div>
+                You
+                <span className="mx-1 fw-bold text-secondary">
+                  {props.item?.status}
+                </span>
+                this item.
+              </div>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleInfoModalClose}>
+              Close
             </Button>
           </Modal.Footer>
         </Modal>

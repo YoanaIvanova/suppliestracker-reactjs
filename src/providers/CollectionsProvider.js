@@ -67,12 +67,12 @@ const CollectionsProvider = (props) => {
         newItem.name = item.name;
         newItem.description = item.description;
         newItem.shape = item.shape;
-        newItem.status = item.status;
-        newItem.qty = item.qty;
         newItem.brand = item.brand;
+        newItem.status = item.status;
         newItem.color = item.color;
         newItem.colorName = item.colorName;
         newItem.colorCode = item.colorCode;
+        newItem.qty = item.qty;
 
         newCollection[itemIndex] = newItem;
       } else {
