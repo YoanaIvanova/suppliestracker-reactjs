@@ -86,14 +86,29 @@ const CollectionCard = (props) => {
           </Col>
         </Row>
 
-        <Link
-          className="btn btn-secondary view-link mt-auto d-flex align-items-center justify-content-center"
-          role="button"
-          to={`/collection/${props.collection.id}`}
-        >
-          <FaRegEye className="me-1" />
-          View details
-        </Link>
+        <Row className="align-items-center mt-auto">
+          <Col xs={{ span: 12, order: 2 }} sm={{ span: 6, order: 1 }}>
+            <Link
+              className="btn btn-secondary view-link d-flex align-items-center justify-content-center"
+              role="button"
+              to={`/collection/${props.collection.id}`}
+            >
+              <FaRegEye className="me-1" />
+              Details
+            </Link>
+          </Col>
+          <Col
+            xs={{ span: 12, order: 1 }}
+            sm={{ span: 6, order: 2 }}
+            className="d-flex justify-content-end mb-2 mb-sm-0"
+          >
+            {props.collection?.defaultBrand && (
+              <small className="text-muted text-end">
+                {props.collection.defaultBrand}
+              </small>
+            )}
+          </Col>
+        </Row>
 
         <Modal show={showDeleteModal} onHide={handleDeleteModalClose}>
           <Modal.Header closeButton>

@@ -23,22 +23,16 @@ const Collection = () => {
 
   return (
     <Container fluid>
-      <Row className="mt-4 mb-3 px-4 justify-conent-center align-items-center">
-        <Col
-          xs={2}
-          className="d-flex justify-content-center justify-content-md-start align-items-center"
-        >
+      <Row className="mt-4 mb-3 px-2 px-sm-4 justify-conent-center align-items-center">
+        <Col xs={2} className="d-flex justify-content-start align-items-center">
           <AddNewButton text="Add new item" action={handleAddModalShow} />
         </Col>
-        <Col xs={8} className="text-center mt-2 mt-md-0">
+        <Col xs={8} className="text-center mt-0">
           <h1 className="display-4 collection-heading mb-0">
             {collection?.name}
           </h1>
         </Col>
-        <Col
-          xs={2}
-          className="d-flex mt-2 mt-md-0 justify-content-center justify-content-md-end"
-        ></Col>
+        <Col xs={2} className="d-flex mt-0 justify-content-end"></Col>
       </Row>
       <Row className="items-pane mb-3 g-3 row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-xl-8 row-cols-xxl-10 row-cols-rt-16 px-2 px-md-4">
         {collection?.items?.map((item, index) => (

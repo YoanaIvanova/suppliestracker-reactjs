@@ -15,20 +15,14 @@ const CollectionsList = () => {
 
   return (
     <Container fluid>
-      <Row className="mt-4 mb-3 px-4 justify-conent-center align-items-center">
-        <Col
-          xs={2}
-          className="d-flex justify-content-center justify-content-md-start align-items-center"
-        >
+      <Row className="mt-4 mb-3 px-2 px-sm-4 justify-conent-center align-items-center">
+        <Col xs={2} className="d-flex justify-content-start align-items-center">
           <AddNewButton text="Add new collection" action={handleAddModalShow} />
         </Col>
-        <Col xs={8} className="text-center mt-2 mt-md-0">
-          <h1 className="fw-bold mb-0">Overview</h1>
+        <Col xs={8} className="text-center mt-0">
+          <h1 className="fw-bold mb-0 display-4">Overview</h1>
         </Col>
-        <Col
-          xs={2}
-          className="d-flex mt-2 mt-md-0 justify-content-center justify-content-md-end"
-        >
+        <Col xs={2} className="d-flex mt-0 justify-content-end">
           <Button
             variant="primary"
             onClick={() => collectionsContext.resetCollections()}
@@ -37,11 +31,12 @@ const CollectionsList = () => {
           </Button>
         </Col>
       </Row>
+
       <Row className="px-4 row-cols-1 row-cols-md-2 row-cols-xl-3 row-cols-rt-6">
         {collectionsContext.collections.map((collection, index) => (
           <Col
             key={index}
-            className="collection-wrapper d-flex justify-content-center"
+            className="collection-wrapper pb-4 d-flex justify-content-center"
           >
             <CollectionCard collection={collection} />
           </Col>
