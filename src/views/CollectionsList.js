@@ -1,19 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Modal,
-  InputGroup,
-  FormControl,
-} from "react-bootstrap";
-import { BsSearch } from "react-icons/bs";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
 
 import { CollectionsContext } from "../providers/CollectionsProvider";
 import CollectionCard from "../components/CollectionCard";
 import AddNewButton from "../components/AddNewButton";
 import CollectionForm from "../components/CollectionForm";
+import Searchbar from "../components/Searchbar";
 
 const CollectionsList = () => {
   const [searchCollections, setSearchCollections] = useState([]);
@@ -46,22 +38,11 @@ const CollectionsList = () => {
         <Col xs={2} className="d-flex justify-content-start align-items-center">
           <AddNewButton text="Add new collection" action={handleAddModalShow} />
         </Col>
-        <Col xs={7} className="text-center mt-0">
+        <Col xs={10} sm={7} className="text-center mt-0">
           <h1 className="fw-bold mb-0 display-4">Overview</h1>
         </Col>
-        <Col xs={3} className="d-flex mt-0 justify-content-end">
-          <InputGroup className="mb-3">
-            <InputGroup.Text id="search">
-              <BsSearch />
-            </InputGroup.Text>
-            <FormControl
-              size="lg"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search"
-              onChange={(e) => handleSearch(e)}
-            />
-          </InputGroup>
+        <Col xs={12} sm={3} className="d-flex mt-2 mt-sm-0 justify-content-end">
+          <Searchbar onSearch={handleSearch} />
 
           {/* <Button
             variant="primary"
