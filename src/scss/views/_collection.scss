@@ -1,6 +1,7 @@
 .collection-heading {
   font-family: $font-family-quaternary;
   background: -webkit-linear-gradient(rgb(91, 192, 226), rgb(72, 28, 158));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

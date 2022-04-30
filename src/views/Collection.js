@@ -1,6 +1,15 @@
 import { useState, useEffect, useContext } from "react";
-import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Modal,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import { BsSearch } from "react-icons/bs";
 
 import { CollectionsContext } from "../providers/CollectionsProvider";
 import CollectionItem from "../components/CollectionItem";
@@ -9,6 +18,7 @@ import ItemForm from "../components/ItemForm";
 
 const Collection = () => {
   const [collection, setCollection] = useState([]);
+  const [searchItems, setSearchItems] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
 
   const { id } = useParams();
@@ -18,8 +28,22 @@ const Collection = () => {
   const handleAddModalShow = () => setShowAddModal(true);
 
   useEffect(() => {
-    setCollection(collectionsContext.getCollectionWithId(id));
+    const fetchedCollection = collectionsContext.getCollectionWithId(id);
+    setCollection(fetchedCollection);
+    setSearchItems(fetchedCollection?.items);
   }, [collectionsContext, id]);
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    let result = collection?.items?.filter((item) => {
+      return (
+        item?.colorName?.toLowerCase().search(query) !== -1 ||
+        item?.colorCode?.toLowerCase().search(query) !== -1
+      );
+    });
+
+    setSearchItems(result);
+  };
 
   return (
     <Container fluid>
@@ -27,15 +51,28 @@ const Collection = () => {
         <Col xs={2} className="d-flex justify-content-start align-items-center">
           <AddNewButton text="Add new item" action={handleAddModalShow} />
         </Col>
-        <Col xs={8} className="text-center mt-0">
+        <Col xs={7} className="text-center mt-0">
           <h1 className="display-4 collection-heading mb-0">
             {collection?.name}
           </h1>
         </Col>
-        <Col xs={2} className="d-flex mt-0 justify-content-end"></Col>
+        <Col xs={3} className="d-flex mt-0 justify-content-end">
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="search">
+              <BsSearch />
+            </InputGroup.Text>
+            <FormControl
+              size="lg"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search"
+              onChange={(e) => handleSearch(e)}
+            />
+          </InputGroup>
+        </Col>
       </Row>
       <Row className="items-pane mb-3 g-3 row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-xl-8 row-cols-xxl-10 row-cols-rt-16 px-2 px-md-4">
-        {collection?.items?.map((item, index) => (
+        {searchItems?.map((item, index) => (
           <CollectionItem
             key={index}
             item={item}
