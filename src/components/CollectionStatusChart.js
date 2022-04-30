@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 
+import { itemStatusMap } from "../utils/CollectionsHelper";
+
 const CollectionStatusChart = (props) => {
   const [chartData, setChartData] = useState({ datasets: [] });
   const [options, setOptions] = useState({
@@ -22,28 +24,30 @@ const CollectionStatusChart = (props) => {
 
   useEffect(() => {
     if (props.items && props.items.length > 0) {
-      const own = props.items.filter((item) => item.status === "OWN").length;
-      const want = props.items.filter((item) => item.status === "WANT").length;
-      const doNotWant = props.items.filter(
-        (item) => item.status === "DO_NOT_WANT"
-      ).length;
+      let statusData = [];
+      let labelsData = [];
+      let backgroundColorData = [];
+      let borderColorData = [];
+
+      [...itemStatusMap.keys()].forEach((key) => {
+        statusData.push(
+          props.items.filter((item) => item.status === key).length
+        );
+
+        const itemStatus = itemStatusMap.get(key);
+        labelsData.push(itemStatus.text);
+        backgroundColorData.push(itemStatus.chartColor);
+        borderColorData.push(itemStatus.chartBorderColor);
+      });
 
       setChartData({
-        labels: ["Own", "Want", "Do Not Want"],
+        labels: labelsData,
         datasets: [
           {
             label: "Items",
-            data: [own, want, doNotWant],
-            backgroundColor: [
-              "rgba(69, 204, 105, 1)",
-              "rgba(214, 66, 49, 1)",
-              "rgba(49, 120, 214, 1)",
-            ],
-            borderColor: [
-              "rgba(255, 255, 255, 1)",
-              "rgba(255, 255, 255, 1)",
-              "rgba(255, 255, 255, 1)",
-            ],
+            data: statusData,
+            backgroundColor: backgroundColorData,
+            borderColor: borderColorData,
             borderWidth: 1,
           },
         ],

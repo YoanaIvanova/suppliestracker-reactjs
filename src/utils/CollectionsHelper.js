@@ -5,6 +5,9 @@ import {
   BsTriangleFill,
   BsHexagonFill,
   BsNutFill,
+  BsStars,
+  BsEmojiAngry,
+  BsHandThumbsUp,
 } from "react-icons/bs";
 import {
   GiAbstract039,
@@ -14,23 +17,58 @@ import {
 } from "react-icons/gi";
 
 export const shapeIconMap = new Map([
-  ["CIRCLE", BsCircleFill],
-  ["ELLIPSE", BsCircleFill],
-  ["CIRCLE_DOT", BsRecordCircle],
-  ["SQUARE", BsSquareFill],
-  ["TRIANGLE", BsTriangleFill],
-  ["HEXAGON", BsHexagonFill],
-  ["HEXAGON_DOT", BsNutFill],
-  ["MARKER_CAP_1", GiAbstract091],
-  ["MARKER_CAP_2", GiAbstract069],
-  ["MARKER_CAP_3", GiAbstract103],
-  ["MARKER_CAP_4", GiAbstract039],
+  ["CIRCLE", { icon: BsCircleFill, strokeWidth: "0.4" }],
+  ["ELLIPSE", { icon: BsCircleFill, strokeWidth: "0.4" }],
+  ["CIRCLE_DOT", { icon: BsRecordCircle, strokeWidth: "0.4" }],
+  ["SQUARE", { icon: BsSquareFill, strokeWidth: "0.4" }],
+  ["TRIANGLE", { icon: BsTriangleFill, strokeWidth: "0.4" }],
+  ["HEXAGON", { icon: BsHexagonFill, strokeWidth: "0.4" }],
+  ["HEXAGON_DOT", { icon: BsNutFill, strokeWidth: "0.4" }],
+  ["MARKER_CAP_1", { icon: GiAbstract091, strokeWidth: "10" }],
+  ["MARKER_CAP_2", { icon: GiAbstract069, strokeWidth: "10" }],
+  ["MARKER_CAP_3", { icon: GiAbstract103, strokeWidth: "10" }],
+  ["MARKER_CAP_4", { icon: GiAbstract039, strokeWidth: "10" }],
 ]);
 
 export const itemStatusMap = new Map([
-  ["OWN", "Own"],
-  ["WANT", "Want"],
-  ["DO_NOT_WANT", "Do Not Want"],
+  [
+    "OWN",
+    {
+      text: "Own",
+      icon: BsHandThumbsUp,
+      chartColor: "rgba(69, 204, 105, 1)",
+      chartBorderColor: "rgba(255, 255, 255, 1)",
+    },
+  ],
+  [
+    "WANT",
+    {
+      text: "Want",
+      icon: BsStars,
+      chartColor: "rgba(214, 66, 49, 1)",
+      chartBorderColor: "rgba(255, 255, 255, 1)",
+    },
+  ],
+  [
+    "DO_NOT_WANT",
+    {
+      text: "Do not want",
+      icon: BsEmojiAngry,
+      chartColor: "rgba(49, 120, 214, 1)",
+      chartBorderColor: "rgba(255, 255, 255, 1)",
+    },
+  ],
+]);
+
+export const defaultsMap = new Map([
+  ["shape", "CIRCLE"],
+  ["shapeSize", "3.5em"],
+  ["shapeColor", "var(--bs-gray-300)"],
+  ["strokeColor", "var(--outline)"],
+  ["strokeWidth", "0.4"],
+  ["color", "#fc0000"],
+  ["status", "OWN"],
+  ["qty", 1],
 ]);
 
 export const initCollections = (setCollections) => {

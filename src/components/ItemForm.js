@@ -1,7 +1,11 @@
 import { useState, useContext } from "react";
 import { Form, Dropdown, Row, Col } from "react-bootstrap";
 
-import { shapeIconMap, itemStatusMap } from "../utils/CollectionsHelper";
+import {
+  shapeIconMap,
+  itemStatusMap,
+  defaultsMap,
+} from "../utils/CollectionsHelper";
 import { CollectionsContext } from "../providers/CollectionsProvider";
 import Shape from "./Shape";
 
@@ -13,15 +17,15 @@ const ItemForm = (props) => {
   );
   const [brand, setBrand] = useState(props.item?.brand);
   const [status, setStatus] = useState(
-    props.item?.status ? props.item.status : "OWN"
+    props.item?.status ? props.item.status : itemStatusMap.keys().next().value
   );
   const [color, setColor] = useState(
-    props.item?.color ? props.item.color : "#fc0000"
+    props.item?.color ? props.item.color : defaultsMap.get("color")
   );
   const [colorName, setColorName] = useState(props.item?.colorName);
   const [colorCode, setColorCode] = useState(props.item?.colorCode);
   const [qty, setQty] = useState(
-    props.item ? (props.item.qty ? props.item.qty : 0) : 1
+    props.item ? (props.item.qty ? props.item.qty : 0) : defaultsMap.get("qty")
   );
 
   const collectionsContext = useContext(CollectionsContext);
@@ -54,12 +58,16 @@ const ItemForm = (props) => {
 
   const statusOptions = [];
   [...itemStatusMap.keys()].forEach((key, index) => {
+    let IconTagName = itemStatusMap.get(key).icon;
     statusOptions.push(
       <Dropdown.Item key={index} eventKey={key}>
-        {itemStatusMap.get(key)}
+        <IconTagName className="text-primary me-2" />
+        {itemStatusMap.get(key).text}
       </Dropdown.Item>
     );
   });
+
+  const StatusIconTagName = itemStatusMap.get(status).icon;
 
   return (
     <Form
@@ -82,7 +90,7 @@ const ItemForm = (props) => {
         >
           <Dropdown.Toggle variant="secondary" id="dropdown-basic">
             <Shape
-              shape={shape ? shape : "CIRCLE"}
+              shape={shape ? shape : defaultsMap.get("shape")}
               size="1.5em"
               color="var(--bs-primary)"
             />
@@ -136,7 +144,8 @@ const ItemForm = (props) => {
           }}
         >
           <Dropdown.Toggle variant="secondary">
-            {itemStatusMap.get(status)}
+            <StatusIconTagName className="text-primary me-2" />
+            {itemStatusMap.get(status).text}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>{statusOptions}</Dropdown.Menu>

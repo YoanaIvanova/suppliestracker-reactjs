@@ -39,7 +39,12 @@ const CollectionsProvider = (props) => {
         newCollections[collectionIndex] = newCollection;
       }
     } else {
-      collection.id = newCollections.at(-1).id + 1;
+      if (newCollections && newCollections.length > 0) {
+        collection.id = newCollections.at(-1).id + 1;
+      } else {
+        collection.id = 1;
+      }
+
       collection.items = [];
       newCollections.push(collection);
     }
@@ -76,7 +81,11 @@ const CollectionsProvider = (props) => {
 
         newCollection[itemIndex] = newItem;
       } else {
-        item.id = newCollection.items?.at(-1).id + 1;
+        if (newCollection.items && newCollection.items.length > 0) {
+          item.id = newCollection.items?.at(-1)?.id + 1;
+        } else {
+          item.id = 1;
+        }
 
         newCollection.items.push(item);
       }

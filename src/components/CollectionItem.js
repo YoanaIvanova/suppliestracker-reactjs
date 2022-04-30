@@ -1,14 +1,9 @@
 import { useState, useContext } from "react";
 import { Col, Modal, Button } from "react-bootstrap";
-import {
-  BsXCircleFill,
-  BsPencilSquare,
-  BsStars,
-  BsEmojiAngry,
-  BsHandThumbsUp,
-} from "react-icons/bs";
+import { BsXCircleFill, BsPencilSquare } from "react-icons/bs";
 
 import { CollectionsContext } from "../providers/CollectionsProvider";
+import { itemStatusMap } from "../utils/CollectionsHelper";
 import ItemForm from "./ItemForm";
 import Shape from "./Shape";
 
@@ -33,6 +28,7 @@ const CollectionItem = (props) => {
     }
 
     const itemClass = props.item.status.toLowerCase().replaceAll("_", "-");
+    const StatusIconTagName = itemStatusMap.get(props.item.status).icon;
 
     return (
       <Col className="d-flex justify-content-center align-items-center">
@@ -77,15 +73,7 @@ const CollectionItem = (props) => {
 
           <div className="footer mt-1 w-100 align-self-start d-flex justify-content-between">
             <div className="start">
-              {props.item.status === "OWN" && (
-                <BsHandThumbsUp className="icon status" />
-              )}
-              {props.item.status === "WANT" && (
-                <BsStars className="icon status" />
-              )}
-              {props.item.status === "DO_NOT_WANT" && (
-                <BsEmojiAngry className="icon status" />
-              )}
+              <StatusIconTagName className="icon status" />
             </div>
             <div className="end">
               {props.item.qty > 0 && (
@@ -226,8 +214,14 @@ const CollectionItem = (props) => {
             <div className="d-flex align-items-center">
               <div>
                 You
-                <span className="mx-1 fw-bold text-secondary">
-                  {props.item?.status}
+                <span className="ms-1">
+                  <StatusIconTagName className="text-secondary" />
+                </span>
+                <span className="fw-bold text-secondary mx-1">
+                  {itemStatusMap.get(props.item?.status)?.text?.toLowerCase()}
+                </span>
+                <span className="me-1">
+                  <StatusIconTagName className="text-secondary" />
                 </span>
                 this item.
               </div>
