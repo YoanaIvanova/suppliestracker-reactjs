@@ -62,14 +62,6 @@
     &:hover {
       color: rgba($outline, 0.7);
     }
-
-    &.status {
-      color: shade-color($secondary, 5%);
-
-      &:hover {
-        color: shade-color($secondary, 30%);
-      }
-    }
   }
 
   .text {

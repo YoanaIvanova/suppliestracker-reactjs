@@ -6,6 +6,7 @@ import { CollectionsContext } from "../providers/CollectionsProvider";
 import { itemStatusMap } from "../utils/CollectionsHelper";
 import ItemForm from "./ItemForm";
 import Shape from "./Shape";
+import StatusIcon from "./StatusIcon";
 
 const CollectionItem = (props) => {
   const collectionsContext = useContext(CollectionsContext);
@@ -28,7 +29,7 @@ const CollectionItem = (props) => {
     }
 
     const itemClass = props.item.status.toLowerCase().replaceAll("_", "-");
-    const StatusIconTagName = itemStatusMap.get(props.item.status).icon;
+    const itemStatus = itemStatusMap.get(props.item.status);
 
     return (
       <Col className="d-flex justify-content-center align-items-center">
@@ -73,7 +74,11 @@ const CollectionItem = (props) => {
 
           <div className="footer mt-1 w-100 align-self-start d-flex justify-content-between">
             <div className="start">
-              <StatusIconTagName className="icon status" />
+              <StatusIcon
+                icon={itemStatus.icon}
+                tooltipText={itemStatus.text}
+                className="icon status"
+              />
             </div>
             <div className="end">
               {props.item.qty > 0 && (
@@ -212,19 +217,19 @@ const CollectionItem = (props) => {
             <br />
 
             <div className="d-flex align-items-center">
-              <div>
-                You
-                <span className="ms-1">
-                  <StatusIconTagName className="text-secondary" />
-                </span>
-                <span className="fw-bold text-secondary mx-1">
-                  {itemStatusMap.get(props.item?.status)?.text?.toLowerCase()}
-                </span>
-                <span className="me-1">
-                  <StatusIconTagName className="text-secondary" />
-                </span>
-                this item.
-              </div>
+              You
+              <StatusIcon
+                icon={itemStatus.icon}
+                className="text-secondary ms-1"
+              />
+              <span className="fw-bold text-secondary mx-1">
+                {itemStatusMap.get(props.item?.status)?.text?.toLowerCase()}
+              </span>
+              <StatusIcon
+                icon={itemStatus.icon}
+                className="text-secondary me-1"
+              />
+              this item.
             </div>
           </Modal.Body>
           <Modal.Footer>

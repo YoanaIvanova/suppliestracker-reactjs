@@ -70,7 +70,7 @@ const CollectionForm = (props) => {
           sm={2}
           controlId="collectionForm.titleColor1"
         >
-          <Form.Label>Color 1</Form.Label>
+          <Form.Label>Top</Form.Label>
           <Form.Control
             type="color"
             defaultValue={titleColor1}
@@ -85,7 +85,7 @@ const CollectionForm = (props) => {
           sm={2}
           controlId="collectionForm.titleColor2"
         >
-          <Form.Label>Color 2</Form.Label>
+          <Form.Label>Bottom</Form.Label>
           <Form.Control
             type="color"
             defaultValue={titleColor2}

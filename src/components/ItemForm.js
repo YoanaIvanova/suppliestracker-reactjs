@@ -113,7 +113,7 @@ const ItemForm = (props) => {
       </Form.Group>
 
       <Row className="mb-3">
-        <Form.Group as={Col} xs="3" sm={2} controlId="itemForm.color">
+        <Form.Group as={Col} xs={4} sm={2} controlId="itemForm.color">
           <Form.Label>Color</Form.Label>
           <Form.Control
             type="color"
@@ -123,7 +123,7 @@ const ItemForm = (props) => {
           />
         </Form.Group>
 
-        <Form.Group as={Col} xs="4" controlId="itemForm.colorCode">
+        <Form.Group as={Col} xs={8} sm={4} controlId="itemForm.colorCode">
           <Form.Label>Color Code</Form.Label>
           <Form.Control
             type="text"
@@ -133,7 +133,13 @@ const ItemForm = (props) => {
           />
         </Form.Group>
 
-        <Form.Group as={Col} xs="5" sm="6" controlId="itemForm.colorName">
+        <Form.Group
+          as={Col}
+          xs={12}
+          sm={6}
+          controlId="itemForm.colorName"
+          className="mt-2 mt-sm-0"
+        >
           <Form.Label>Color Name</Form.Label>
           <Form.Control
             type="text"
