@@ -29,7 +29,11 @@ const Sidebar = () => {
 
   return (
     <>
-      <Navbar bg="primary" className="top-mobile-navbar d-lg-none px-3">
+      <Navbar
+        sticky="top"
+        bg="primary"
+        className="top-mobile-navbar d-lg-none px-3"
+      >
         <Navbar.Toggle
           aria-controls="main-navbar"
           onClick={() => setShowMobileNav(!showMobileNav)}
