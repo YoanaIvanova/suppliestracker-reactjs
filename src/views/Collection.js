@@ -7,6 +7,7 @@ import CollectionItem from "../components/CollectionItem";
 import AddNewButton from "../components/AddNewButton";
 import ItemForm from "../components/ItemForm";
 import Searchbar from "../components/Searchbar";
+import { defaultsMap } from "../utils/CollectionsHelper";
 
 const Collection = () => {
   const [collection, setCollection] = useState([]);
@@ -44,7 +45,20 @@ const Collection = () => {
           <AddNewButton text="Add new item" action={handleAddModalShow} />
         </Col>
         <Col xs={10} sm={7} className="text-center mt-0">
-          <h1 className="display-4 collection-heading mb-0">
+          <h1
+            className="display-4 collection-heading mb-0"
+            style={{
+              background: `linear-gradient(${
+                collection?.titleColor1
+                  ? collection?.titleColor1
+                  : defaultsMap.get("titleColor1")
+              }, ${
+                collection?.titleColor2
+                  ? collection?.titleColor2
+                  : defaultsMap.get("titleColor2")
+              })`,
+            }}
+          >
             {collection?.name}
           </h1>
         </Col>

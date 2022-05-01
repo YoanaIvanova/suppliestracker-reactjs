@@ -66,6 +66,8 @@ export const defaultsMap = new Map([
   ["shapeColor", "var(--bs-gray-300)"],
   ["strokeColor", "var(--outline)"],
   ["strokeWidth", "0.4"],
+  ["titleColor1", "#5bc0e2"],
+  ["titleColor2", "#481c9e"],
   ["color", "#fc0000"],
   ["status", "OWN"],
   ["qty", 1],

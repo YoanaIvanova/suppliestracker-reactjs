@@ -50,7 +50,11 @@ const ItemForm = (props) => {
   const shapeOptions = [];
   [...shapeIconMap.keys()].forEach((key, index) => {
     shapeOptions.push(
-      <Dropdown.Item key={index} eventKey={key}>
+      <Dropdown.Item
+        key={index}
+        eventKey={key}
+        className="d-flex align-items-center"
+      >
         <Shape shape={key} size="1.5em" color="var(--bs-primary)" />
       </Dropdown.Item>
     );
@@ -60,7 +64,11 @@ const ItemForm = (props) => {
   [...itemStatusMap.keys()].forEach((key, index) => {
     let IconTagName = itemStatusMap.get(key).icon;
     statusOptions.push(
-      <Dropdown.Item key={index} eventKey={key}>
+      <Dropdown.Item
+        key={index}
+        eventKey={key}
+        className="d-flex align-items-center"
+      >
         <IconTagName className="text-primary me-2" />
         {itemStatusMap.get(key).text}
       </Dropdown.Item>
@@ -88,7 +96,11 @@ const ItemForm = (props) => {
             setShape(key);
           }}
         >
-          <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+          <Dropdown.Toggle
+            variant="secondary"
+            id="shape-dropdown"
+            className="d-flex align-items-center"
+          >
             <Shape
               shape={shape ? shape : defaultsMap.get("shape")}
               size="1.5em"
@@ -143,7 +155,10 @@ const ItemForm = (props) => {
             setStatus(key);
           }}
         >
-          <Dropdown.Toggle variant="secondary">
+          <Dropdown.Toggle
+            variant="secondary"
+            className="d-flex align-items-center"
+          >
             <StatusIconTagName className="text-primary me-2" />
             {itemStatusMap.get(status).text}
           </Dropdown.Toggle>

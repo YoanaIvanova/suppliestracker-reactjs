@@ -35,6 +35,8 @@ const CollectionsProvider = (props) => {
         newCollection.description = collection.description;
         newCollection.defaultItemShape = collection.defaultItemShape;
         newCollection.defaultBrand = collection.defaultBrand;
+        newCollection.titleColor1 = collection.titleColor1;
+        newCollection.titleColor2 = collection.titleColor2;
 
         newCollections[collectionIndex] = newCollection;
       }
