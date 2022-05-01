@@ -33,7 +33,6 @@ const Sidebar = () => {
         <Navbar.Toggle
           aria-controls="main-navbar"
           onClick={() => setShowMobileNav(!showMobileNav)}
-          className="text-secondary"
         >
           <GiHamburgerMenu size="1.2em" />
         </Navbar.Toggle>
@@ -49,21 +48,32 @@ const Sidebar = () => {
         } sidebar h-100 bg-primary px-4 d-lg-block`}
       >
         <Nav className="flex-column sidebar-menu">
-          <Navbar.Brand as={Link} to="/collections" className="p-0 mt-5 mb-4">
-            <GiPencilBrush size="1.5em" className="me-2" />
-            <span className="font-logo">Supplies Tracker</span>
-          </Navbar.Brand>
+          <Navbar className="mt-5 mb-4 p-0 d-flex align-items-center">
+            <Navbar.Brand
+              as={Link}
+              to="/collections"
+              className="justify-content-start p-0"
+            >
+              <GiPencilBrush size="1.5em" className="me-2" />
+              <span className="font-logo">Supplies Tracker</span>
+            </Navbar.Brand>
 
-          <Nav.Link
-            className="collapse-close d-lg-none text-end pe-0"
-            onClick={() => setShowMobileNav(false)}
-          >
-            <AiOutlineCloseSquare size="2em" />
-          </Nav.Link>
+            <Nav.Link
+              className="collapse-close d-lg-none ms-auto p-0 ms-2"
+              onClick={() => setShowMobileNav(false)}
+            >
+              <AiOutlineCloseSquare size="2em" />
+            </Nav.Link>
+          </Navbar>
 
           <Nav.Link
             as={NavLink}
             to="/collections"
+            onClick={() => {
+              if (showMobileNav) {
+                setShowMobileNav(false);
+              }
+            }}
             className="d-flex justify-content-between align-items-center"
           >
             <span>
@@ -99,6 +109,11 @@ const Sidebar = () => {
                     <Nav.Link
                       as={NavLink}
                       to={`/collection/${collection.id}`}
+                      onClick={() => {
+                        if (showMobileNav) {
+                          setShowMobileNav(false);
+                        }
+                      }}
                       className="d-flex justify-content-between"
                     >
                       <span>{collection.name}</span>
@@ -113,20 +128,30 @@ const Sidebar = () => {
           <Nav.Link
             as={NavLink}
             to="/favorites"
+            onClick={() => {
+              if (showMobileNav) {
+                setShowMobileNav(false);
+              }
+            }}
             className="d-flex justify-content-between align-items-center"
           >
             <span>
               <GiHearts className="me-2" />
               Favorites
-              <Badge pill className="bg-light ms-2">
+              {/* <Badge pill className="bg-light ms-2">
                 999+
-              </Badge>
+              </Badge> */}
             </span>
           </Nav.Link>
 
           <Nav.Link
             as={NavLink}
             to="/wishlist"
+            onClick={() => {
+              if (showMobileNav) {
+                setShowMobileNav(false);
+              }
+            }}
             className="d-flex justify-content-between align-items-center"
           >
             <span>

@@ -25,9 +25,6 @@ $body-color: $primary;
 $accordion-icon-color: $secondary;
 $accordion-icon-active-color: $secondary;
 
-.btn-secondary {
-  color: $body-color;
-}
 $btn-close-color: $text-muted;
 $btn-close-focus-shadow: none;
 
@@ -60,3 +57,8 @@ $input-focus-box-shadow: none;
 $tooltip-bg: $secondary;
 $tooltip-color: $primary;
 $tooltip-border-radius: 0.5rem;
+$navbar-light-color: $secondary;
+$navbar-light-brand-color: $secondary;
+$navbar-light-brand-hover-color: $secondary;
+$navbar-light-toggler-border-color: $secondary;
+$navbar-toggler-focus-width: 0;
