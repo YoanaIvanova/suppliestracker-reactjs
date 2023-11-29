@@ -1,0 +1,425 @@
+{
+  "collections": [
+    {
+      "id": 1,
+      "name": "Acrylic Markers",
+      "description": "Acrylic Marker Collection",
+      "defaultItemShape": "CIRCLE",
+      "defaultBrand": "Acrylic Marker Brand",
+      "items": [
+        {
+          "id": 1,
+          "name": "Red Acrylic Marker",
+          "description": "My Red Acrylic Marker",
+          "color": "#DC143C",
+          "colorName": "Red",
+          "colorCode": "R00",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Yellow Acrylic Marker",
+          "description": "Yellow Acrylic Marker",
+          "color": "#FFFF66",
+          "colorName": "Yellow",
+          "colorCode": "Y01",
+          "status": "WANT"
+        },
+        {
+          "id": 3,
+          "name": "Blue Acrylic Marker",
+          "description": "Blue Acrylic Marker",
+          "color": "#1E90FF",
+          "colorName": "Blue",
+          "colorCode": "B004",
+          "status": "DO_NOT_WANT"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Alcohol Markers",
+      "description": "Alcohol Marker Collection",
+      "defaultItemShape": "MARKER_CAP_1",
+      "defaultBrand": "Alcohol Marker Brand",
+      "items": [
+        {
+          "id": 1,
+          "name": "Green Alcohol Marker",
+          "description": "My Green Alcohol Marker",
+          "color": "#7CFC00",
+          "colorName": "Green",
+          "colorCode": "GR07",
+          "shape": "MARKER_CAP_2",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Purple Alcohol Marker",
+          "description": "My Purple Alcohol Marker",
+          "color": "#9370DB",
+          "colorName": "Purple",
+          "colorCode": "PU2",
+          "shape": "MARKER_CAP_3",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 3,
+          "name": "Orange Alcohol Marker",
+          "description": "Orange Alcohol Marker",
+          "color": "#FF7F50",
+          "colorName": "Orange",
+          "colorCode": "YR58",
+          "shape": "MARKER_CAP_4",
+          "status": "WANT"
+        },
+        {
+          "id": 4,
+          "name": "Salmon Alcohol Marker",
+          "description": "My Salmon Alcohol Marker",
+          "color": "#FA8072",
+          "colorName": "Salmon",
+          "colorCode": "VR67",
+          "status": "OWN",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Watercolor Pencils",
+      "description": "Watercolor Pencils Collection",
+      "defaultItemShape": "CIRCLE_DOT",
+      "defaultBrand": "Watercolor Pencils Brand",
+      "items": [
+        {
+          "id": 1,
+          "name": "Pink Watercolor Pencil",
+          "description": "My Pink Acrylic Marker",
+          "color": "#FF69B4",
+          "colorName": "Pink",
+          "colorCode": "P02",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Brown Watercolor Pencil",
+          "description": "My Brown Watercolor Pencil",
+          "color": "#8B4513",
+          "colorName": "Brown",
+          "colorCode": "BR400",
+          "shape": "CIRCLE",
+          "status": "OWN",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Oil Pastels",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper tincidunt diam, eu scelerisque arcu suscipit sed. Aliquam consectetur, ante eget lacinia euismod, ipsum mauris pretium tortor, a euismod nulla nulla sit amet felis.",
+      "defaultItemShape": "SQUARE",
+      "defaultBrand": "Oil Pastels Brand",
+      "items": [
+        {
+          "id": 1,
+          "name": "Red Oil Pastel",
+          "description": "My Red Oil Pastel",
+          "color": "#DC143C",
+          "colorName": "Red",
+          "colorCode": "R00",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Blue Oil Pastel",
+          "description": "My Blue Oil Pastel",
+          "color": "#0048BA",
+          "colorName": "Absolute Zero",
+          "colorCode": "B010",
+          "shape": "CIRCLE",
+          "status": "WANT"
+        },
+        {
+          "id": 3,
+          "name": "Acid green Pastel",
+          "description": "Acid green Pastel",
+          "color": "#B0BF1A",
+          "colorName": "Acid Green",
+          "colorCode": "YR58",
+          "shape": "CIRCLE",
+          "status": "WANT"
+        },
+        {
+          "id": 4,
+          "name": "Blanched almond Oil Pastel",
+          "description": "My Blanched almond Oil Pastel",
+          "color": "#FFEBCD",
+          "colorName": "Blanched almond",
+          "colorCode": "BR000",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 5,
+          "name": "Cadmium red Oil Pastel",
+          "description": "Cadmium red Oil Pastel",
+          "color": "#E30022",
+          "colorName": "Cadmium Red",
+          "colorCode": "VR67",
+          "status": "DO_NOT_WANT"
+        },
+        {
+          "id": 6,
+          "name": "Green Oil Pastel",
+          "description": "My Green Oil Pastel",
+          "color": "#7CFC00",
+          "colorName": "Green",
+          "colorCode": "GR07",
+          "status": "OWN",
+          "qty": 4
+        },
+        {
+          "id": 7,
+          "name": "Purple Oil Pastel",
+          "description": "My Purple Oil Pastel",
+          "color": "#9370DB",
+          "colorName": "Purple",
+          "colorCode": "PU2",
+          "shape": "HEXAGON",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 8,
+          "name": "Fluorescent Yellow Green Oil Pastel",
+          "description": "My Fluorescent Yellow Green Oil Pastel",
+          "color": "#ADF022",
+          "colorName": "Fluorescent Yellow Green",
+          "colorCode": "Y01",
+          "status": "WANT"
+        },
+        {
+          "id": 9,
+          "name": "Pink Oil Pastel",
+          "description": "My Pink Oil Pastel",
+          "color": "#FF69B4",
+          "colorName": "Pink",
+          "colorCode": "P02",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 10,
+          "name": "Candy apple red Oil Pastel",
+          "description": "My Candy apple red Oil Pastel",
+          "color": "#FF0800",
+          "colorName": "Candy apple red",
+          "colorCode": "R008",
+          "shape": "CIRCLE_DOT",
+          "status": "OWN",
+          "qty": 2
+        },
+        {
+          "id": 11,
+          "name": "Blue Oil Pastel",
+          "description": "My Blue Oil Pastel",
+          "color": "#1E90FF",
+          "colorName": "Blue",
+          "colorCode": "B004",
+          "status": "WANT"
+        },
+        {
+          "id": 12,
+          "name": "Orange Oil Pastel",
+          "description": "Orange Oil Pastel",
+          "color": "#FF7F50",
+          "colorName": "Orange",
+          "colorCode": "YR58",
+          "status": "WANT"
+        },
+        {
+          "id": 13,
+          "name": "Brown Oil Pastel",
+          "description": "My Brown Oil Pastel",
+          "color": "#8B4513",
+          "colorName": "Brown",
+          "colorCode": "BR400",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 14,
+          "name": "Salmon Oil Pastel",
+          "description": "Salmon Oil Pastel",
+          "color": "#FA8072",
+          "colorName": "Salmon",
+          "colorCode": "VR67",
+          "shape": "HEXAGON_DOT",
+          "status": "DO_NOT_WANT"
+        },
+        {
+          "id": 15,
+          "name": "Green Oil Pastel",
+          "description": "My Green Oil Pastel",
+          "color": "#7CFC00",
+          "colorName": "Green",
+          "colorCode": "GR07",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 16,
+          "name": "Dark green Oil Pastel",
+          "description": "My Dark green Oil Pastel",
+          "color": "#013220",
+          "colorName": "Dark green",
+          "colorCode": "PU2",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 17,
+          "name": "Yellow Oil Pastel",
+          "description": "My Yellow Oil Pastel",
+          "color": "#FFFF66",
+          "colorName": "Yellow",
+          "colorCode": "Y01",
+          "status": "WANT"
+        },
+        {
+          "id": 18,
+          "name": "Pink Oil Pastel",
+          "description": "My Pink Oil Pastel",
+          "color": "#FF69B4",
+          "colorName": "Pink",
+          "colorCode": "P02",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 19,
+          "name": "Red Oil Pastel",
+          "description": "My Red Oil Pastel",
+          "color": "#DC143C",
+          "colorName": "Red",
+          "colorCode": "R00",
+          "shape": "TRIANGLE",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 20,
+          "name": "Blue Oil Pastel",
+          "description": "My Blue Oil Pastel",
+          "color": "#1E90FF",
+          "colorName": "Blue",
+          "colorCode": "B004",
+          "status": "WANT"
+        },
+        {
+          "id": 21,
+          "name": "Electric violet Oil Pastel",
+          "description": "Electric violet Oil Pastel",
+          "color": "#8F00FF",
+          "colorName": "Electric violet",
+          "colorCode": "EV02",
+          "status": "WANT"
+        },
+        {
+          "id": 22,
+          "name": "Fashion fuchsia Oil Pastel",
+          "description": "My Fashion fuchsia Oil Pastel",
+          "color": "#F400A1",
+          "colorName": "Fashion fuchsia",
+          "colorCode": "FFA1",
+          "shape": "ELLIPSE",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 23,
+          "name": "Salmon Oil Pastel",
+          "description": "Salmon Oil Pastel",
+          "color": "#FA8072",
+          "colorName": "Salmon",
+          "colorCode": "VR67",
+          "status": "DO_NOT_WANT"
+        },
+        {
+          "id": 24,
+          "name": "Green Oil Pastel",
+          "description": "My Green Oil Pastel",
+          "color": "#7CFC00",
+          "colorName": "Green",
+          "colorCode": "GR07",
+          "shape": "CIRCLE",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 25,
+          "name": "Purple Oil Pastel",
+          "description": "My Purple Oil Pastel",
+          "color": "#9370DB",
+          "colorName": "Purple",
+          "colorCode": "PU2",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 26,
+          "name": "Fluorescent Yellow Green Oil Pastel",
+          "description": "My Fluorescent Yellow Green Oil Pastel",
+          "color": "#ADF022",
+          "colorName": "FluorescentYellowGreen255",
+          "colorCode": "FYG938",
+          "status": "WANT"
+        },
+        {
+          "id": 27,
+          "name": "Pink Oil Pastel",
+          "description": "My Pink Oil Pastel",
+          "color": "#FF69B4",
+          "colorName": "Pink",
+          "colorCode": "P02",
+          "status": "OWN",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Gouache Paint",
+      "description": "Gouache Paint Collection",
+      "defaultItemShape": "TRIANGLE",
+      "defaultBrand": "Gouache Paint Brand",
+      "items": [
+        {
+          "id": 1,
+          "name": "Yellow Gouache Paint",
+          "description": "My Yellow Gouache Paint",
+          "color": "#FFFF66",
+          "colorName": "Yellow",
+          "colorCode": "Y01",
+          "status": "OWN",
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Brown Gouache Paint",
+          "description": "My Brown Gouache Paint",
+          "color": "#8B4513",
+          "colorName": "Brown",
+          "colorCode": "BR400",
+          "status": "DO_NOT_WANT"
+        }
+      ]
+    }
+  ]
+}

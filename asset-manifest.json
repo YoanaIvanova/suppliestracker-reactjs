@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/suppliestracker-reactjs/static/css/main.8687667a.css",
+    "main.js": "/suppliestracker-reactjs/static/js/main.109335a4.js",
+    "static/js/787.aa91fd9f.chunk.js": "/suppliestracker-reactjs/static/js/787.aa91fd9f.chunk.js",
+    "index.html": "/suppliestracker-reactjs/index.html",
+    "main.8687667a.css.map": "/suppliestracker-reactjs/static/css/main.8687667a.css.map",
+    "main.109335a4.js.map": "/suppliestracker-reactjs/static/js/main.109335a4.js.map",
+    "787.aa91fd9f.chunk.js.map": "/suppliestracker-reactjs/static/js/787.aa91fd9f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8687667a.css",
+    "static/js/main.109335a4.js"
+  ]
+}
