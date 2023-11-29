@@ -1,6 +1,6 @@
 # Supplies Tracker Front-end
 
-A PoC front-end for an app that tracks the availability of different types of supplies. Originally intended for art supplies, but can be used for anything.
+A PoC front-end for an app that tracks the availability of different types of supplies. Originally intended for art supplies, but can be used for anything. A demo can be seen live at: [https://yoanaivanova.github.io/suppliestracker-reactjs](https://yoanaivanova.github.io/suppliestracker-reactjs)
 
 ![ST_Collection_List](https://github.com/YoanaIvanova/suppliestracker-reactjs/assets/15999515/d0a8cc2d-e4aa-4248-8633-edbd8e45b8bc)
 
@@ -25,6 +25,8 @@ The app allows you to create collections of items. You will have access to a det
 You can perform CRUD operations on both collections and their items.
 
 A search & filter functionality is also implemented on the collection/item list pages.
+
+You can view and click around a live demo with sample data here: [https://yoanaivanova.github.io/suppliestracker-reactjs](https://yoanaivanova.github.io/suppliestracker-reactjs)
 
 ## TODOs
 - Pagination for collection items

@@ -14,6 +14,7 @@ const App = () => {
         <main className="content h-100">
           <Routes>
             <Route exact path="/" element={<CollectionsList />} />
+            <Route path="/suppliestracker-reactjs" element={<CollectionsList />} />
             <Route path="/collections" element={<CollectionsList />} />
             <Route path="/collection/:id" element={<Collection />} />
           </Routes>
