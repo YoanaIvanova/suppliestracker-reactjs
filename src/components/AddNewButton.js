@@ -9,12 +9,6 @@ const AddNewButton = (props) => {
       <BsPlusCircleFill
         size="2.5em"
         className="add-new-icon me-2"
-        // style={{
-        //   paintOrder: "fill",
-        //   stroke: "var(--bs-primary)",
-        //   strokeWidth: "0.4",
-        //   overflow: "visible",
-        // }}
       />
       <div className="add-new-text fw-bold">
         {props.text ? props.text : "Add new"}
